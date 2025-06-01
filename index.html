@@ -86,9 +86,9 @@
 
       <!-- TEKS -->
       <div class="hero-text flex-grow-1 text-md-start text-start w-100">
-        <h1 class="fw-bold txt-dark display-4 text-md-start text-start">
-          Sewa Baju Cosplay Kerenmu Sekarang & Tampil Percaya Diri!
-        </h1>
+<h1 class="fw-bold display-4 text-md-start text-start gradient-futuristic">
+  Sewa Baju Cosplay Kerenmu Sekarang & Tampil Percaya Diri!
+</h1>
 
         <!-- Toggle Info -->
         <button class="btn-toggle-info mt-3 text-md-start text-start"
@@ -137,42 +137,146 @@
 <!-- Hero awal -->
 
 
+<section class="py-5 bg-light">
+  <div class="container px-4">
+    <div class="row mb-4">
 
-
-<!-- Categories -->
-<section class="categories-bg-wrapper py-5">
-  <div class="container categories-section">
-    <h2 class="text-center mb-4 fw-semibold text-purple">Kategori Populer</h2>
-  <div class="row g-4">
-    <div class="col-md-4">
-      <div class="card category-card shadow-sm p-3">
-        <img src="assets/cus1.png" class="card-img-top" alt="Anime">
-        <div class="card-body">
-          <h5 class="card-title">Anime</h5>
-          <p class="card-text">Naruto, One Piece, Demon Slayer & lainnya.</p>
+      <!-- Sidebar Filter -->
+      <div class="col-md-3">
+        <h5 class="fw-bold">Filter Kostum</h5>
+        <!-- Filter Kategori -->
+        <div class="border border-2 rounded-4 p-3 mb-4" style="border-radius: 20px !important;">
+        <h6 class="fw-semibold mb-3">Kategori</h6>
+        <div class="form-check custom-radio-purple mb-2">
+            <input class="form-check-input" type="radio" name="filterCategory" id="Semua" checked>
+            <label class="form-check-label" for="Semua">Semua</label>
+        </div>
+        <div class="form-check custom-radio-purple mb-2">
+            <input class="form-check-input" type="radio" name="filterCategory" id="Pria">
+            <label class="form-check-label" for="Pria">Pria</label>
+        </div>
+        <div class="form-check custom-radio-purple mb-2">
+            <input class="form-check-input" type="radio" name="filterCategory" id="Wanita">
+            <label class="form-check-label" for="Wanita">Wanita</label>
+        </div>
+        <div class="form-check custom-radio-purple">
+            <input class="form-check-input" type="radio" name="filterCategory" id="Anak-anak">
+            <label class="form-check-label" for="Anak-anak">Anak-anak</label>
+        </div>
         </div>
       </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card category-card shadow-sm p-3">
-        <img src="https://i.ibb.co/pfDQq2c/superhero.jpg" class="card-img-top" alt="Superhero">
-        <div class="card-body">
-          <h5 class="card-title">Superhero</h5>
-          <p class="card-text">Marvel, DC, dan pahlawan favorit lainnya.</p>
+
+      <!-- Produk -->
+      <div class="col-md-9">
+        <div class="d-flex justify-content-between align-items-center mb-3 flex-column flex-md-row gap-3">
+          <div class="text-muted" id="productCount">Menampilkan <strong>...</strong></div>
         </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card category-card shadow-sm p-3">
-        <img src="https://i.ibb.co/DtcsT2S/fantasy.jpg" class="card-img-top" alt="Fantasy">
-        <div class="card-body">
-          <h5 class="card-title">Fantasy</h5>
-          <p class="card-text">Elf, penyihir, dan kostum kerajaan epik.</p>
-        </div>
+        <div class="row g-4" id="productList">
+          <!-- Produk 1 -->
+          <div class="col-12 col-sm-6 col-lg-4" data-category="Pria" data-price="75000">
+            <div class="card h-100 shadow-sm">
+              <img src="assets/itachi.png" class="card-img-top" alt="Kostum Naruto">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <h6 class="card-title fw-semibold mb-0">Kostum Itachi Akatsuki Lengkap</h6>
+                  <span class="badge bg-purple-available">Tersedia</span>
+                </div>
+                <p class="mb-1 text-muted small">Kategori: <strong>Pria</strong></p>
+                <p class="card-text small text-muted mb-1">Ukuran: M, L, XL</p>
+                <p class="card-text small text-muted">Sempurna untuk event anime atau photoshoot bertema ninja.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="fw-bold text-purple">Rp75.000</span>
+                  <button class="btn btn-outline-dark btn-sm">Sewa Sekarang</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Produk 2 -->
+          <div class="col-12 col-sm-6 col-lg-4" data-category="Anak-anak" data-price="85000">
+            <div class="card h-100 shadow-sm">
+              <img src="assets/nezuko.png" class="card-img-top" alt="Kostum Nezuko">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <h6 class="card-title fw-semibold mb-0">Kostum Demon Slayer Nezuko</h6>
+                  <span class="badge bg-purple-booked">Terbooking</span>
+                </div>
+                <p class="mb-1 text-muted small">Kategori: <strong>Anak-anak</strong></p>
+                <p class="card-text small text-muted mb-1">Ukuran: S, M</p>
+                <p class="card-text small text-muted">Desain berkualitas tinggi, cocok untuk cosplay Nezuko.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="fw-bold text-purple">Rp85.000</span>
+                  <button class="btn btn-outline-dark btn-sm" disabled>Sewa Sekarang</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Produk 3 -->
+          <div class="col-12 col-sm-6 col-lg-4" data-category="Wanita" data-price="70000">
+            <div class="card h-100 shadow-sm">
+              <img src="assets/noboro.png" class="card-img-top" alt="Kostum Noboro">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <h6 class="card-title fw-semibold mb-0">Kostum Jujutsu Kaisen Noboro</h6>
+                  <span class="badge bg-purple-available">Tersedia</span>
+                </div>
+                <p class="mb-1 text-muted small">Kategori: <strong>Wanita</strong></p>
+                <p class="card-text small text-muted mb-1">Ukuran: S, M, L</p>
+                <p class="card-text small text-muted">Tampil percaya diri sebagai karakter Noboro yang bohai.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="fw-bold text-purple">Rp70.000</span>
+                  <button class="btn btn-outline-dark btn-sm">Sewa Sekarang</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+             <!-- Produk 3 -->
+          <div class="col-12 col-sm-6 col-lg-4" data-category="Wanita" data-price="70000">
+            <div class="card h-100 shadow-sm">
+              <img src="assets/noboro.png" class="card-img-top" alt="Kostum Noboro">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <h6 class="card-title fw-semibold mb-0">Kostum Jujutsu Kaisen Noboro</h6>
+                  <span class="badge bg-purple-available">Tersedia</span>
+                </div>
+                <p class="mb-1 text-muted small">Kategori: <strong>Wanita</strong></p>
+                <p class="card-text small text-muted mb-1">Ukuran: S, M, L</p>
+                <p class="card-text small text-muted">Tampil percaya diri sebagai karakter Noboro yang bohai.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="fw-bold text-purple">Rp70.000</span>
+                  <button class="btn btn-outline-dark btn-sm">Sewa Sekarang</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+             <!-- Produk 3 -->
+          <div class="col-12 col-sm-6 col-lg-4" data-category="Wanita" data-price="70000">
+            <div class="card h-100 shadow-sm">
+              <img src="assets/noboro.png" class="card-img-top" alt="Kostum Noboro">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <h6 class="card-title fw-semibold mb-0">Kostum Jujutsu Kaisen Noboro</h6>
+                  <span class="badge bg-purple-available">Tersedia</span>
+                </div>
+                <p class="mb-1 text-muted small">Kategori: <strong>Wanita</strong></p>
+                <p class="card-text small text-muted mb-1">Ukuran: S, M, L</p>
+                <p class="card-text small text-muted">Tampil percaya diri sebagai karakter Noboro yang bohai.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="fw-bold text-purple">Rp70.000</span>
+                  <button class="btn btn-outline-dark btn-sm">Sewa Sekarang</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> <!-- end row -->
       </div>
     </div>
   </div>
 </section>
+
 
 <!-- Footer -->
 <footer class="bg-white py-4 text-center">
@@ -189,5 +293,6 @@
 <!-- Bootstrap & JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/script.js"></script>
+<script src="js/product.js"></script>
 </body>
 </html>

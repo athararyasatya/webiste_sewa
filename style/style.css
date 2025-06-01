@@ -130,6 +130,14 @@ color: #3444;
   min-height: 320px;
 }
 
+.gradient-futuristic {
+  background: linear-gradient(90deg, #a259ff, #3f0071);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+
 
 
 .btn-toggle-info {
@@ -156,6 +164,51 @@ color: #3444;
 .transition-collapse {
   transition: all 0.3s ease-in-out;
 }
+
+
+
+
+/* Shop produk yes */
+/* Gradient radio button ungu */
+.custom-radio-purple .form-check-input:checked {
+  background: linear-gradient(45deg, #a259ff, #3f0071);
+  border: none;
+}
+
+.custom-radio-purple .form-check-input {
+  border: 2px solid #a259ff;
+  width: 18px;
+  height: 18px;
+}
+/* Gradient untuk radio button kategori */
+.custom-radio-purple .form-check-input:checked {
+  background: linear-gradient(45deg, #a259ff, #3f0071);
+  border: none;
+}
+
+.custom-radio-purple .form-check-input {
+  border: 2px solid #a259ff;
+  width: 18px;
+  height: 18px;
+}
+
+/* Badge untuk status */
+.bg-purple-available {
+  background: linear-gradient(90deg, #b56dff, #8854d0);
+  color: #fff;
+}
+
+.bg-purple-booked {
+  background: linear-gradient(90deg, #a259ff, #3f0071);
+  color: #fff;
+}
+
+/* Warna harga */
+.text-purple {
+  color: #7a3cff;
+}
+
+/* shop produk yes */
 
 
 @media (max-width: 768px) {
