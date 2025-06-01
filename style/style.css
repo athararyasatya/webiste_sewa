@@ -25,6 +25,39 @@ body {
   color: #fff;
 }
 
+/* mycart navbar */
+.btn-mycart {
+  border: 2px solid #9F7AEA;       
+  border-radius: 12px;            
+  color: #7C3AED;                 
+  background-color: transparent;   
+  transition: all 0.3s ease;
+}
+
+.btn-mycart i {
+  color: #7C3AED;                  
+  transition: color 0.3s ease;
+}
+
+.btn-mycart:hover {
+  background-color: #9F7AEA;       
+  color: #ffffff;                  
+  border-color: #7C3AED;          
+}
+
+.btn-mycart:hover i {
+  color: #ffffff;                 
+}
+
+/* mycart navbar */
+
+
+/* navbar */
+.navbar-brand {
+  background: linear-gradient(to right, #b38aff, #7c4dff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 .navbar-nav .nav-link:hover {
   color: #6f42c1;
@@ -33,46 +66,8 @@ body {
 .navbar-brand {
   font-size: 1.25rem;
 }
-
-.btn-outline-dark:hover {
-  background-color: #6f42c1;
-  color: white;
-  border-color: #6f42c1;
-}
-
-
-.hero-section {
-  max-width: 1200px;
-  overflow: visible;
-  
-}
-
-.text-gradient-purple {
-  background: linear-gradient(to right, #b38aff, #7c4dff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-
-.hero-card {
-  background: linear-gradient(to left, #f4e9ff, #b69df2); /* ungu gradasi kanan ke kiri */
-  position: relative;
-  overflow: visible;
-  min-height: 320px;
-}
-
-.hero-image-wrapper {
-  display: flex;
-  align-items: end;
-  justify-content: center;
-  overflow: visible;
-}
-
-.hero-image {
-  height: 400px;
-  object-fit: contain;
-  display: block;
-  margin-bottom: -10px;
+.navbar-brand i {
+  padding-left: 2px;
 }
 
 .btn-outline-dark:hover .bi-cart {
@@ -108,6 +103,87 @@ color: #3444;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
+.hero-bg-wrapper {
+  background: #f4f0ff;
+}
+
+
+.categories-bg-wrapper {
+  background: #f4f0ff; 
+}
+/* navbar */
+
+
+.hero-section {
+  max-width: 1200px;
+  overflow: visible;
+  
+}
+
+
+
+
+.hero-card {
+  background: linear-gradient(to left, #b69df2, #f4e9ff); /* ungu gradasi kanan ke kiri */
+  position: relative;
+  overflow: visible;
+  min-height: 320px;
+}
+
+
+
+.btn-toggle-info {
+  background: transparent;
+  border: none;
+  color: #9F7AEA;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  transition: color 0.3s;
+  text-align: left;
+}
+.btn-toggle-info:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+.btn-toggle-info:hover {
+  color: #7C3AED;
+}
+.text-purple-light {
+  color: #9F7AEA;
+}
+.transition-collapse {
+  transition: all 0.3s ease-in-out;
+}
+
+
+@media (max-width: 768px) {
+  .hero-text {
+    text-align: left !important;
+  }
+}
+
+/* Transisi halus untuk collapse */
+.transition-collapse {
+  transition: all 0.3s ease-in-out;
+}
+
+.hero-image-wrapper {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  overflow: visible;
+}
+
+.hero-image {
+  height: 400px;
+  object-fit: contain;
+  display: block;
+  margin-bottom: -10px;
+}
+
+
 
   
 
@@ -130,6 +206,13 @@ color: #3444;
   .hero-image {
     height: 300px;
     margin-bottom: 0;
+  }
+
+    .navbar-nav .nav-link {
+    font-size: 0.85rem;
+  }
+  .navbar-brand {
+    font-size: 1rem;
   }
 }
 
