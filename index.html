@@ -14,6 +14,11 @@
   <!-- Google Font: Mona-Sans -->
  <link href="https://fonts.googleapis.com/css2?family=Mona+Sans:wght@400;600&display=swap" rel="stylesheet">
 
+  <!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<!-- Leaflet Routing Machine CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+
   <!-- Custom CSS -->
   <link rel="stylesheet" href="style/style.css">
 </head>
@@ -39,10 +44,11 @@
       <span class=" d-lg-inline fw-semibold small" style="color: #6b21a8;">Login</span>
 
       <!-- Cart -->
-      <a href="#" class="btn btn-light border d-flex align-items-center justify-content-center px-2 py-1">
-        <i class="bi bi-cart fs-6 me-lg-1" style="color: #6b21a8;"></i>
-        <span class="d-none d-lg-inline fw-semibold small" style="color: #6b21a8;">My Cart</span>
-      </a>
+<!-- My Cart Button (Sudah Ada di Navbar Anda) -->
+<a href="#" class="btn btn-light border d-flex align-items-center justify-content-center px-2 py-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart">
+  <i class="bi bi-cart fs-6 me-lg-1" style="color: #6b21a8;"></i>
+  <span class="d-none d-lg-inline fw-semibold small" style="color: #6b21a8;">My Cart</span>
+</a>
 
       <!-- Hamburger -->
       <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -79,6 +85,89 @@
 </nav>
 
 
+<!-- Offcanvas Cart -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCart">
+  <div class="offcanvas-header text-white" style="background: linear-gradient(to right, #c084fc, #9333ea);">
+    <h5 class="offcanvas-title d-flex align-items-center">
+      <i class="bi bi-disc me-2"></i> CCC RENTAL
+    </h5>
+    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+
+  <div class="offcanvas-body p-3" style="background: #f8f5ff; color: #1e1b4b;">
+    <h5 class="mb-3 fw-semibold text-purple">Keranjang Saya</h5>
+<div class="cart-item d-flex gap-3 rounded shadow-sm p-3 mb-3" style="background: linear-gradient(to bottom right, #f3e8ff, #ede9fe); font-size: 0.875rem;">
+  <!-- Gambar -->
+  <img src="assets/itachi.png" alt="Produk" style="width: 60px; height: 60px; object-fit: cover;" class="rounded flex-shrink-0">
+
+  <!-- Konten -->
+  <div class="d-flex justify-content-between flex-grow-1 flex-wrap">
+    <!-- Kiri -->
+    <div class="pe-3" style="max-width: calc(100% - 110px);">
+      <h6 class="mb-1 fw-semibold" style="font-size: 0.85rem;">Kostum Itachi Panjang</h6>
+      <span class="badge category-badge mb-1">Wanita</span>
+      <p class="size-label mb-1" style="font-size: 0.8rem;">Pilih Ukuran:</p>
+      <div class="d-flex gap-2 mb-2">
+        <input type="radio" class="btn-check" name="size1" id="sizeM1" autocomplete="off">
+        <label class="btn size-circle" for="sizeM1">M</label>
+
+        <input type="radio" class="btn-check" name="size1" id="sizeL1" autocomplete="off" checked>
+        <label class="btn size-circle" for="sizeL1">L</label>
+
+        <input type="radio" class="btn-check" name="size1" id="sizeXL1" autocomplete="off">
+       <label class="btn size-circle" for="sizeXL1">XL</label>
+
+      </div>
+    </div>
+
+    <!-- Kanan -->
+ <div class="d-flex flex-column align-items-end justify-content-between" style="min-width: 100px;">
+
+      <div class="qty-wrapper d-flex align-items-center gap-2 justify-content-end mb-2">
+        <button class="qty-icon rounded px-2" onclick="kurangiQty(this)" style="font-size: 0.8rem;">–</button>
+        <span class="qty-value" style="font-size: 0.8rem;">1</span>
+        <button class="qty-icon rounded px-2" onclick="tambahQty(this)" style="font-size: 0.8rem;">+</button>
+      </div>
+      <div class="fw-semibold text-dark" style="font-size: 0.875rem;">Rp75.000</div>
+    </div>
+  </div>
+</div>
+
+
+
+    <!-- Metode Pengiriman -->
+    <div class="mb-3 mt-4">
+      <label for="shippingMethod" class="fw-semibold text-purple mb-2">Metode Pengiriman</label>
+<select id="shippingMethod" class="form-select custom-select-purple shadow-sm">
+  <option value="reguler">Reguler (2–3 hari)</option>
+  <option value="sameday">Same Day Delivery</option>
+</select>
+
+    </div>
+
+    <!-- Map -->
+    <h6 class="mt-4 fw-semibold text-purple">Alamat Pengiriman</h6>
+    <div id="map" style="height: 200px; border-radius: 10px; overflow: hidden;" class="mb-2"></div>
+    <p class="small text-muted" id="distanceInfo">Mengukur jarak ke lokasi...</p>
+
+    <!-- Total -->
+    <div class="border-top pt-3 mt-3">
+      <div class="d-flex justify-content-between mb-1">
+        <span>Subtotal</span>
+        <span>Rp150.000</span>
+      </div>
+      <div class="d-flex justify-content-between fw-bold text-purple">
+        <span>Total</span>
+        <span>Rp150.000</span>
+      </div>
+      <button class="btn w-100 mt-3 text-white fw-semibold" style="background-color: #9333ea;">Checkout Sekarang</button>
+    </div>
+  </div>
+</div>
+
+
+
+
 
 <section class="hero-bg-wrapper py-5">
   <div class="container px-4">
@@ -86,9 +175,9 @@
 
       <!-- TEKS -->
       <div class="hero-text flex-grow-1 text-md-start text-start w-100">
-<h1 class="fw-bold display-4 text-md-start text-start gradient-futuristic">
-  Sewa Baju Cosplay Kerenmu Sekarang & Tampil Percaya Diri!
-</h1>
+        <h1 class="fw-bold display-4 text-md-start text-start gradient-futuristic">
+          Sewa Baju Cosplay Kerenmu Sekarang & Tampil Percaya Diri!
+        </h1>
 
         <!-- Toggle Info -->
         <button class="btn-toggle-info mt-3 text-md-start text-start"
@@ -98,24 +187,24 @@
 
         <!-- Info Penyewaan -->
         <div class="collapse mt-3 transition-collapse" id="infoSewa">
-<ul class="list-unstyled ps-0">
-  <li class="d-flex gap-2 mb-2">
-    <i class="bi bi-person-check-fill text-purple-light mt-1"></i>
-    <div>Daftar terlebih dahulu dan login melalui menu <span class="fw-semibold">Login</span>.</div>
-  </li>
-  <li class="d-flex gap-2 mb-2">
-    <i class="bi bi-cart-check-fill text-purple-light mt-1"></i>
-    <div>Klik <span class="fw-semibold">"Sewa Sekarang"</span> lalu isi detail pemesananmu.</div>
-  </li>
-  <li class="d-flex gap-2 mb-2">
-    <i class="bi bi-send-check-fill text-purple-light mt-1"></i>
-    <div>Kami akan mengirim kostum langsung ke alamatmu.</div>
-  </li>
-  <li class="d-flex gap-2">
-    <i class="bi bi-clock-fill text-purple-light mt-1"></i>
-    <div>Durasi minimal sewa adalah <span class="fw-semibold">3 hari</span>.</div>
-  </li>
-</ul>
+      <ul class="list-unstyled ps-0">
+        <li class="d-flex gap-2 mb-2">
+          <i class="bi bi-person-check-fill text-purple-light mt-1"></i>
+          <div>Daftar terlebih dahulu dan login melalui menu <span class="fw-semibold">Login</span>.</div>
+        </li>
+        <li class="d-flex gap-2 mb-2">
+          <i class="bi bi-cart-check-fill text-purple-light mt-1"></i>
+          <div>Klik <span class="fw-semibold">"Sewa Sekarang"</span> lalu isi detail pemesananmu.</div>
+        </li>
+        <li class="d-flex gap-2 mb-2">
+          <i class="bi bi-send-check-fill text-purple-light mt-1"></i>
+          <div>Kami akan mengirim kostum langsung ke alamatmu.</div>
+        </li>
+        <li class="d-flex gap-2">
+          <i class="bi bi-clock-fill text-purple-light mt-1"></i>
+          <div>Durasi minimal sewa adalah <span class="fw-semibold">3 hari</span>.</div>
+        </li>
+        </ul>
 
         </div>
 
@@ -345,5 +434,10 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/script.js"></script>
 <script src="js/product.js"></script>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<!-- Routing Machine JS -->
+<script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.min.js"></script>
 </body>
 </html>

@@ -114,6 +114,128 @@ color: #3444;
 /* navbar */
 
 
+
+/* Sidebar */
+/* Sidebar Gradient */
+  .product-img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+
+  .size-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: #6b7280;
+  }
+
+  .size-circle {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    padding: 0;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 28px;
+    border: 1px solid #a855f7;
+    color: #a855f7;
+    background-color: white;
+    transition: 0.2s ease;
+  }
+
+  .btn-check:checked + .size-circle {
+    background-color: #a855f7 !important;
+    color: white !important;
+  }
+
+  .qty-wrapper {
+    background-color: #f3e8ff;
+    border-radius: 999px;
+    padding: 2px 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    gap: 6px;
+  }
+
+  .qty-icon {
+    border: none;
+    border-radius: 50%;
+    background-color: white;
+    color: #6b21a8;
+    width: 28px;
+    height: 28px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s ease;
+    box-shadow: 0 0 0 1px #d8b4fe inset;
+  }
+
+  .qty-icon:hover {
+    background-color: #a855f7;
+    color: white;
+  }
+
+  .qty-value {
+    width: 24px;
+    text-align: center;
+    font-size: 15px;
+    color: #1e1b4b;
+  }
+
+.category-badge {
+  background-color: #e9d5ff;
+  color: #7e22ce;
+  font-size: 0.75rem;
+  padding: 2px 10px;
+  border-radius: 999px;
+}
+
+.size-circle {
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 34px;
+  font-size: 0.75rem;
+  background-color: #f5f3ff; /* opsional */
+  border: 1px solid #c4b5fd; /* opsional */
+}
+
+
+
+
+  .custom-select-purple {
+  background: #ede9fe url('data:image/svg+xml;utf8,<svg fill="%236b21a8" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 1rem center/1rem auto;
+  color: #6b21a8;
+  font-weight: 500;
+  padding-right: 2.5rem;
+  border: none;
+  border-radius: 0.375rem;
+  appearance: none;
+}
+
+  .qty-price-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 1rem;
+  }
+
+  @media (min-width: 576px) {
+    .qty-price-box {
+      margin-top: 0;
+      margin-left: auto;
+    }
+  }
+
+/* sidebar */
 .hero-section {
   max-width: 1200px;
   overflow: visible;
@@ -208,7 +330,11 @@ color: #3444;
   color: #7a3cff;
 }
 
+
+
 /* shop produk yes */
+
+
 
 
 @media (max-width: 768px) {
