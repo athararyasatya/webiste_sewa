@@ -44,11 +44,13 @@
       <span class=" d-lg-inline fw-semibold small" style="color: #6b21a8;">Login</span>
 
       <!-- Cart -->
-<!-- My Cart Button (Sudah Ada di Navbar Anda) -->
-<a href="#" class="btn btn-light border d-flex align-items-center justify-content-center px-2 py-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart">
+<a href="#" class="btn btn-light border d-flex align-items-center justify-content-center px-2 py-1 position-relative" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart">
   <i class="bi bi-cart fs-6 me-lg-1" style="color: #6b21a8;"></i>
   <span class="d-none d-lg-inline fw-semibold small" style="color: #6b21a8;">My Cart</span>
+  <span id="cartBadge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="display: none; font-size: 0.65rem;">0</span>
 </a>
+
+
 
       <!-- Hamburger -->
       <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -84,10 +86,8 @@
   </div>
 </nav>
 
-
 <!-- Offcanvas Cart -->
 <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" id="offcanvasCart">
-
   <div class="offcanvas-header text-white" style="background: linear-gradient(135deg, #6f42c1, #000000);">
     <h5 class="offcanvas-title d-flex align-items-center">
       <i class="bi bi-disc me-2"></i> CCC RENTAL
@@ -97,53 +97,17 @@
 
   <div class="offcanvas-body p-3" style="background: #f8f5ff; color: #1e1b4b;">
     <h5 class="mb-3 fw-semibold text-purple">Keranjang Saya</h5>
-<div class="cart-item d-flex gap-3 rounded shadow-sm p-3 mb-3" style="background: linear-gradient(to bottom right, #f3e8ff, #ede9fe); font-size: 0.875rem;">
-  <!-- Gambar -->
-  <img src="assets/itachi.png" alt="Produk" style="width: 60px; height: 60px; object-fit: cover;" class="rounded flex-shrink-0">
 
-  <!-- Konten -->
-  <div class="d-flex justify-content-between flex-grow-1 flex-wrap">
-    <!-- Kiri -->
-    <div class="pe-3" style="max-width: calc(100% - 110px);">
-      <h6 class="mb-1 fw-semibold" style="font-size: 0.85rem;">Kostum Itachi Panjang</h6>
-      <span class="badge category-badge mb-1">Wanita</span>
-      <p class="size-label mb-1" style="font-size: 0.8rem;">Pilih Ukuran:</p>
-      <div class="d-flex gap-2 mb-2">
-        <input type="radio" class="btn-check" name="size1" id="sizeM1" autocomplete="off">
-        <label class="btn size-circle" for="sizeM1">M</label>
-
-        <input type="radio" class="btn-check" name="size1" id="sizeL1" autocomplete="off" checked>
-        <label class="btn size-circle" for="sizeL1">L</label>
-
-        <input type="radio" class="btn-check" name="size1" id="sizeXL1" autocomplete="off">
-       <label class="btn size-circle" for="sizeXL1">XL</label>
-
-      </div>
-    </div>
-
-    <!-- Kanan -->
- <div class="d-flex flex-column align-items-end justify-content-between" style="min-width: 100px;">
-
-      <div class="qty-wrapper d-flex align-items-center gap-2 justify-content-end mb-2">
-        <button class="qty-icon rounded px-2" onclick="kurangiQty(this)" style="font-size: 0.8rem;">–</button>
-        <span class="qty-value" style="font-size: 0.8rem;">1</span>
-        <button class="qty-icon rounded px-2" onclick="tambahQty(this)" style="font-size: 0.8rem;">+</button>
-      </div>
-      <div class="fw-semibold text-dark" style="font-size: 0.875rem;">Rp75.000</div>
-    </div>
-  </div>
-</div>
-
-
+    <!-- Dinamis isi produk -->
+    <div id="cartItems"></div>
 
     <!-- Metode Pengiriman -->
     <div class="mb-3 mt-4">
       <label for="shippingMethod" class="fw-semibold text-purple mb-2">Metode Pengiriman</label>
-<select id="shippingMethod" class="form-select custom-select-purple shadow-sm">
-  <option value="reguler">Reguler (2–3 hari)</option>
-  <option value="sameday">Same Day Delivery</option>
-</select>
-
+      <select id="shippingMethod" class="form-select custom-select-purple shadow-sm">
+        <option value="reguler">Reguler (2–3 hari)</option>
+        <option value="sameday">Same Day Delivery</option>
+      </select>
     </div>
 
     <!-- Map -->
@@ -155,16 +119,17 @@
     <div class="border-top pt-3 mt-3">
       <div class="d-flex justify-content-between mb-1">
         <span>Subtotal</span>
-        <span>Rp150.000</span>
+        <span id="subtotal">Rp0</span>
       </div>
       <div class="d-flex justify-content-between fw-bold text-purple">
         <span>Total</span>
-        <span>Rp150.000</span>
+        <span id="total">Rp0</span>
       </div>
       <button class="btn w-100 mt-3 text-white fw-semibold" style="background-color: #9333ea;">Checkout Sekarang</button>
     </div>
   </div>
 </div>
+
 
 
 
