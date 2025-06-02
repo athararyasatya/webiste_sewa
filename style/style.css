@@ -25,6 +25,106 @@ body {
   color: #fff;
 }
 
+
+/* login */
+/* Background Hero Login */
+
+
+  .login-hero {
+      background-image: url('../assets/image.png'); /* Ganti URL sesuai file kamu */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+    }
+
+    .login-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+
+    /* Card Login */
+    .login-card {
+      z-index: 2;
+      max-width: 400px;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .text-purple {
+      color: #6b21a8;
+    }
+
+    /* Fokus input */
+    .form-control.custom-focus:focus {
+      border-color: #6b21a8 !important;
+      box-shadow: 0 0 0 0.2rem rgba(107, 33, 168, 0.25) !important;
+    }
+
+    /* Input + icon mata menyatu */
+    .input-group .form-control {
+      border-right: none;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    .input-group-text {
+      border-left: none;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      background-color: #fff;
+      cursor: pointer;
+      padding: 0 0.75rem;
+    }
+
+    .input-group-text i {
+      color: #6c757d;
+      font-size: 1rem;
+    }
+
+
+
+/* login */
+
+
+/* Register */
+.register-hero {
+  background-image: url('../assets/image.png'); /* Sama seperti login */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.register-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+/* Card Register */
+.register-card {
+  z-index: 2;
+  max-width: 480px; /* Lebih lebar sedikit dari login-card (400px) */
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Register */
+
 /* mycart navbar */
 .btn-mycart {
   border: 2px solid #9F7AEA;       
@@ -209,8 +309,6 @@ color: #3444;
 }
 
 
-
-
   .custom-select-purple {
   background: #ede9fe url('data:image/svg+xml;utf8,<svg fill="%236b21a8" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 1rem center/1rem auto;
   color: #6b21a8;
@@ -236,13 +334,13 @@ color: #3444;
   }
 
 /* sidebar */
+
+/* hero section */
 .hero-section {
   max-width: 1200px;
   overflow: visible;
   
 }
-
-
 
 
 .hero-card {
@@ -258,8 +356,6 @@ color: #3444;
   -webkit-text-fill-color: transparent;
   color: transparent;
 }
-
-
 
 
 .btn-toggle-info {
@@ -288,7 +384,7 @@ color: #3444;
 }
 
 
-
+/* hero section */
 
 /* Shop produk yes */
 /* Gradient radio button ungu */

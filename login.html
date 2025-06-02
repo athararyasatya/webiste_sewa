@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login CCC RENTAL</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Google Font: Mona-Sans -->
+ <link href="https://fonts.googleapis.com/css2?family=Mona+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<!-- Leaflet Routing Machine CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg shadow-sm sticky-top" style="background-color: #f4f0ff;">
+  <div class="container px-3 d-flex justify-content-between align-items-center">
+
+    <!-- LOGO -->
+    <a class="navbar-brand fw-bold d-flex align-items-center" href="#" style="color: #6b21a8;">
+      <i class="bi bi-disc me-2 fs-2"></i> CCC RENTAL
+    </a>
+
+      <!-- Akun -->
+    <div class="d-flex align-items-center gap-2 order-lg-last">
+   
+      <a href="login.html" class="btn btn-light border rounded-circle d-flex align-items-center justify-content-center" style="width: 34px; height: 34px;">
+        <i class="bi bi-person-fill fs-6" style="color: #6b21a8;"></i>
+      </a>
+      <a href="login.html" class="d-lg-inline fw-semibold small text-decoration-none" style="color: #6b21a8;">Login</a>
+
+      <!-- Cart -->
+    <a href="#" class="btn btn-light border d-flex align-items-center justify-content-center px-2 py-1 position-relative" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart">
+      <i class="bi bi-cart fs-6 me-lg-1" style="color: #6b21a8;"></i>
+      <span class="d-none d-lg-inline fw-semibold small" style="color: #6b21a8;">My Cart</span>
+      <span id="cartBadge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="display: none; font-size: 0.65rem;">0</span>
+    </a>
+      <!-- Hamburger -->
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <i class="bi bi-list fs-2" style="color: #6b21a8;"></i>
+      </button>
+    </div>
+
+    <!-- MENU NAV -->
+    <div class="collapse navbar-collapse order-lg-0" id="navbarNav">
+      <ul class="navbar-nav ms-auto text-center text-lg-start w-100 justify-content-end gap-1">
+        <li class="nav-item">
+          <a class="nav-link px-2 py-1 fw-normal small" href="#" style="color: #6b21a8;">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle px-2 py-1 fw-normal small" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #6b21a8;">
+            Costumes
+          </a>
+          <ul class="dropdown-menu custom-dropdown-animation">
+            <li><a class="dropdown-item small" href="#">Anime</a></li>
+            <li><a class="dropdown-item small" href="#">Fantasy</a></li>
+            <li><a class="dropdown-item small" href="#">Super Hero</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link px-2 py-1 fw-normal small" href="#" style="color: #6b21a8;">Pesanan</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link px-2 py-1 fw-normal small" href="#" style="color: #6b21a8;">Pengembalian</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section Login -->
+<!-- Hero Section Login -->
+<div class="login-hero d-flex align-items-center justify-content-center min-vh-100 px-3">
+  <div class="login-card p-4 rounded-4 shadow-lg">
+    <div class="text-center mb-4">
+      <i class="bi bi-person-circle fs-1 text-purple"></i>
+      <h4 class="fw-bold mt-2 text-purple">Welcome Back!</h4>
+      <p class="small text-secondary">Silakan login untuk melanjutkan</p>
+    </div>
+
+    <form>
+      <div class="mb-3">
+        <label for="email" class="form-label small fw-semibold">Email</label>
+        <input type="email" class="form-control custom-focus" id="email" placeholder="nama@email.com" required>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label small fw-semibold">Password</label>
+        <input type="password" class="form-control custom-focus" id="password" placeholder="••••••••" required>
+      </div>
+
+      <button type="submit" class="btn w-100 fw-semibold text-white" style="background-color: #6b21a8;">Login</button>
+    </form>
+
+    <p class="text-center mt-3 small">Belum punya akun? <a href="register.html" class="text-decoration-none text-purple">Daftar</a></p>
+  </div>
+</div>
+
+
+
+
+
+
+<!-- Footer -->
+<footer class="text-light pt-5 pb-4" style="background: linear-gradient(135deg, #6f42c1, #000000); border-top-left-radius: 12px; border-top-right-radius: 12px;">
+  <div class="container">
+    <div class="row gy-4">
+
+      <!-- Brand -->
+      <div class="col-md-4">
+        <h4 class="d-flex align-items-center mb-3 fw-bold">
+          <i class="bi bi-disc-fill fs-3 me-2 text-white"></i> CCC RENTAL
+        </h4>
+        <p class="text-white-50 small">
+          Lorem ipsum dolor sit amet consectetur. Egestas mauris magna varius enim ultricies quisque. Volutpat integer lacus commodo sit ullamcorper sit. Viverra eget pulvinar.
+        </p>
+        <div class="d-flex gap-3 mt-3">
+          <a href="#" class="text-white-50 fs-5"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-white-50 fs-5"><i class="bi bi-twitter"></i></a>
+          <a href="#" class="text-white-50 fs-5"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="text-white-50 fs-5"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+
+      <!-- Links -->
+      <div class="col-md-2">
+        <h6 class="fw-semibold mb-3">Company</h6>
+        <ul class="list-unstyled small text-white-50">
+          <li><a href="#" class="text-decoration-none text-white-50">Home</a></li>
+          <li><a href="#" class="text-decoration-none text-white-50">Customes</a></li>
+          <li><a href="#" class="text-decoration-none text-white-50">Pesanan</a></li>
+          <li><a href="#" class="text-decoration-none text-white-50">Pengembalian baju</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-2">
+        <h6 class="fw-semibold mb-3">Customer Services</h6>
+        <ul class="list-unstyled small text-white-50">
+          <li><a href="#" class="text-decoration-none text-white-50">My Account</a></li>
+
+        </ul>
+      </div>
+
+      <div class="col-md-2">
+        <h6 class="fw-semibold mb-3">Informasi kamuu</h6>
+        <ul class="list-unstyled small text-white-50">
+
+        </ul>
+      </div>
+
+      <div class="col-md-2">
+        <h6 class="fw-semibold mb-3">Info kontak</h6>
+        <ul class="list-unstyled small text-white-50">
+          <li><i class="bi bi-telephone me-2"></i> +62 896-6289-2649</li>
+          <li><i class="bi bi-envelope me-2"></i> febru&nadia@gmail.com</li>
+          <li><i class="bi bi-geo-alt me-2"></i> jakarta <br> Manhattan 18920</li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="border-white mt-5 mb-3" style="opacity: 0.1;">
+    <p class="text-center small text-white-50 mb-0">CCC RENTAL © 2000–2024. All Rights Reserved</p>
+  </div>
+</footer>
+
+
+<!-- Bootstrap & JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+<script src="js/product.js"></script>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<!-- Routing Machine JS -->
+<script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.min.js"></script>
+</body>
+</html>
