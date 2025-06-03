@@ -2,6 +2,8 @@ body {
   font-family: 'Mona Sans', sans-serif;
   background-color: #f4f0ff; 
   color: #333;
+    margin: 0;
+      padding: 0;
 }
 
 .text-purple {
@@ -24,20 +26,41 @@ body {
   background-color: #5a379c;
   color: #fff;
 }
+  .step-circle {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    color: white;
+    font-weight: bold;
+  }
 
+  .rotate-180 {
+    transform: rotate(180deg);
+  }
+  .transition {
+    transition: transform 0.3s ease;
+  }
 
 /* login */
 /* Background Hero Login */
 
 
-  .login-hero {
-      background-image: url('../assets/image.png'); /* Ganti URL sesuai file kamu */
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      position: relative;
-    }
-
+.login-hero {
+  background-image: url('../assets/image.png'); /* Ganti URL sesuai file kamu */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  /* Hapus atau ubah min-height: 100vh; */
+  /* min-height: 100vh; */ /* Hapus baris ini */
+  /* Tambahkan padding-top dan padding-bottom untuk memberikan ruang */
+  padding-top: 50px; /* Sesuaikan sesuai kebutuhan, bisa lebih besar jika navbar tinggi */
+  padding-bottom: 50px; /* Sesuaikan sesuai kebutuhan */
+  display: flex; /* Tambahkan ini */
+  align-items: center; /* Tambahkan ini */
+  justify-content: center; /* Tambahkan ini */
+}
     .login-hero::before {
       content: '';
       position: absolute;
@@ -126,6 +149,23 @@ body {
 /* Register */
 
 /* mycart navbar */
+.overlay-dark {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1040;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.overlay-dark.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+
 .btn-mycart {
   border: 2px solid #9F7AEA;       
   border-radius: 12px;            
@@ -503,4 +543,11 @@ text-decoration: none;
 .navbar .btn {
 width: 100%;
 }
+
+
+    footer {
+      margin-top: -12px; /* naikkan sedikit untuk tutup celah visual akibat border-radius */
+      z-index: 1;
+      position: relative;
+    }
 

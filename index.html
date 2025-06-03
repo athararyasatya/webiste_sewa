@@ -58,7 +58,7 @@
     <div class="collapse navbar-collapse order-lg-0" id="navbarNav">
       <ul class="navbar-nav ms-auto text-center text-lg-start w-100 justify-content-end gap-1">
         <li class="nav-item">
-          <a class="nav-link px-2 py-1 fw-normal small" href="#" style="color: #6b21a8;">Home</a>
+          <a class="nav-link px-2 py-1 fw-normal small" href="index.html" style="color: #6b21a8;">Home</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle px-2 py-1 fw-normal small" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #6b21a8;">
@@ -106,9 +106,9 @@
     </div>
 
     <!-- Map -->
-    <h6 class="mt-4 fw-semibold text-purple">Alamat Pengiriman</h6>
+    <!-- <h6 class="mt-4 fw-semibold text-purple">Alamat Pengiriman</h6>
     <div id="map" style="height: 200px; border-radius: 10px; overflow: hidden;" class="mb-2"></div>
-    <p class="small text-muted" id="distanceInfo">Mengukur jarak ke lokasi...</p>
+    <p class="small text-muted" id="distanceInfo">Mengukur jarak ke lokasi...</p> -->
 
     <!-- Total -->
     <div class="border-top pt-3 mt-3">
@@ -125,6 +125,16 @@
   </div>
 </div>
 
+<!-- Overlay untuk efek gelap -->
+<div id="overlay-dark" class="overlay-dark">
+
+  display: none;
+  position: fixed;
+  top: 0; left: 0; 
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1040;
+"></div>
 
 
 
@@ -179,6 +189,125 @@
       </div>
 
     </div>
+  </div>
+</section>
+
+<section class="py-5 px-3" style="background: linear-gradient(135deg, #1f0036, #2a004d);">
+  <div class="container">
+
+    <div class="row">
+      <!-- Left Content -->
+      <div class="col-12 col-md-6 text-white mb-3">
+        <h2 class="fw-bold">Rules Penyewaan</h2>
+        <p class="text-white-50">Silakan baca aturan dan proses sebelum menyewa kostum cosplay.</p>
+
+        <!-- Toggle Button -->
+<button class="btn btn-outline-light fw-bold mt-3 d-flex align-items-center gap-2" 
+        type="button" 
+        data-bs-toggle="collapse" 
+        data-bs-target="#alurPenyewaan" 
+        aria-expanded="false" 
+        aria-controls="alurPenyewaan">
+  Lihat Alur Penyewaan Kostum
+  <i class="bi bi-chevron-down transition" id="arrowIcon"></i>
+</button>
+      </div>
+    </div>
+
+    <!-- Collapse: tanpa padding/margin di elemen ini -->
+    <div class="collapse" id="alurPenyewaan">
+      <!-- Bungkus isi dengan div baru yang punya padding/margin -->
+      <div class="mt-4 pt-2">
+        <div class="row gx-3 gy-4">
+        
+          <!-- STEP 1 -->
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="step-box text-white p-4 rounded-4 shadow h-100" style="background-color: #6b21a8;">
+              <div class="d-flex align-items-center mb-3">
+                <div class="rounded-circle bg-white text-purple fw-bold d-flex align-items-center justify-content-center me-3" style="width: 36px; height: 36px;">1</div>
+                <i class="bi bi-person-plus fs-4 text-white"></i>
+              </div>
+              <h6 class="fw-bold">Login / Register</h6>
+              <p class="small text-white-50 mb-0">Buat akun atau masuk untuk mulai menyewa kostum cosplay.</p>
+            </div>
+          </div>
+
+          <!-- STEP 2 -->
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="step-box text-white p-4 rounded-4 shadow h-100" style="background-color: #6b21a8;">
+              <div class="d-flex align-items-center mb-3">
+                <div class="rounded-circle bg-white text-purple fw-bold d-flex align-items-center justify-content-center me-3" style="width: 36px; height: 36px;">2</div>
+                <i class="bi bi-search fs-4 text-white"></i>
+              </div>
+              <h6 class="fw-bold">Lihat & Pilih Kostum</h6>
+              <p class="small text-white-50 mb-0">Jelajahi katalog produk dan pilih kostum favoritmu.</p>
+            </div>
+          </div>
+
+          <!-- STEP 3 -->
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="step-box text-white p-4 rounded-4 shadow h-100" style="background-color: #6b21a8;">
+              <div class="d-flex align-items-center mb-3">
+                <div class="rounded-circle bg-white text-purple fw-bold d-flex align-items-center justify-content-center me-3" style="width: 36px; height: 36px;">3</div>
+                <i class="bi bi-sliders fs-4 text-white"></i>
+              </div>
+              <h6 class="fw-bold">Pilih Ukuran Kostum</h6>
+              <p class="small text-white-50 mb-0">Tentukan size kostum sebelum masuk ke keranjang.</p>
+            </div>
+          </div>
+
+          <!-- STEP 4 -->
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="step-box text-white p-4 rounded-4 shadow h-100" style="background-color: #6b21a8;">
+              <div class="d-flex align-items-center mb-3">
+                <div class="rounded-circle bg-white text-purple fw-bold d-flex align-items-center justify-content-center me-3" style="width: 36px; height: 36px;">4</div>
+                <i class="bi bi-cart-plus fs-4 text-white"></i>
+              </div>
+              <h6 class="fw-bold">Keranjang & Qty</h6>
+              <p class="small text-white-50 mb-0">Atur jumlah kostum yang ingin disewa, lalu lanjutkan checkout.</p>
+            </div>
+          </div>
+
+          <!-- STEP 5 -->
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="step-box text-white p-4 rounded-4 shadow h-100" style="background-color: #6b21a8;">
+              <div class="d-flex align-items-center mb-3">
+                <div class="rounded-circle bg-white text-purple fw-bold d-flex align-items-center justify-content-center me-3" style="width: 36px; height: 36px;">5</div>
+                <i class="bi bi-credit-card fs-4 text-white"></i>
+              </div>
+              <h6 class="fw-bold">Checkout & Bayar</h6>
+              <p class="small text-white-50 mb-0">Lakukan pembayaran untuk konfirmasi pesanan kostummu.</p>
+            </div>
+          </div>
+
+          <!-- STEP 6 -->
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="step-box text-white p-4 rounded-4 shadow h-100" style="background-color: #6b21a8;">
+              <div class="d-flex align-items-center mb-3">
+                <div class="rounded-circle bg-white text-purple fw-bold d-flex align-items-center justify-content-center me-3" style="width: 36px; height: 36px;">6</div>
+                <i class="bi bi-box-seam fs-4 text-white"></i>
+              </div>
+              <h6 class="fw-bold">Persiapan Pesanan</h6>
+              <p class="small text-white-50 mb-0">Admin akan menyiapkan produkmu setelah pembayaran terkonfirmasi.</p>
+            </div>
+          </div>
+
+          <!-- STEP 7 -->
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="step-box text-white p-4 rounded-4 shadow h-100" style="background-color: #6b21a8;">
+              <div class="d-flex align-items-center mb-3">
+                <div class="rounded-circle bg-white text-purple fw-bold d-flex align-items-center justify-content-center me-3" style="width: 36px; height: 36px;">7</div>
+                <i class="bi bi-geo-alt fs-4 text-white"></i>
+              </div>
+              <h6 class="fw-bold">Siap Diambil</h6>
+              <p class="small text-white-50 mb-0">Kostum siap diambil di store kami. Alamat akan muncul di halaman pesanan.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
