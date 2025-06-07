@@ -82,6 +82,7 @@
 </nav>
 
 <!-- Offcanvas Cart -->
+<!-- Offcanvas Cart -->
 <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" id="offcanvasCart">
   <div class="offcanvas-header text-white" style="background: linear-gradient(135deg, #6f42c1, #000000);">
     <h5 class="offcanvas-title d-flex align-items-center">
@@ -90,25 +91,21 @@
     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
 
-  <div class="offcanvas-body p-3" style="background: #f8f5ff; color: #1e1b4b;">
+  <div class="offcanvas-body p-3 d-flex flex-column h-100" style="background: #f8f5ff; color: #1e1b4b;">
     <h5 class="mb-3 fw-semibold text-purple">Keranjang Saya</h5>
 
-    <!-- Dinamis isi produk -->
-    <div id="cartItems"></div>
+   <!-- Alert Informasi -->
+<div class="alert alert-warning py-2 px-3 mb-3 rounded-3" role="alert" style="font-size: 0.85rem;">
+  ⏱️ Durasi sewa minimal adalah <strong>3 hari</strong> dan hanya bisa ditambah per <strong>3 hari</strong>.<br>
+  Jika dikurangi di bawah 3 hari, produk akan otomatis dihapus dari keranjang.
+</div>
 
-    <!-- Metode Pengiriman -->
-    <div class="mb-3 mt-4">
-      <label for="shippingMethod" class="fw-semibold text-purple mb-2">Metode Pengiriman</label>
-      <select id="shippingMethod" class="form-select custom-select-purple shadow-sm">
-        <option value="reguler">Reguler (2–3 hari)</option>
-        <option value="sameday">Same Day Delivery</option>
-      </select>
-    </div>
+<!-- Dinamis isi produk -->
+<div id="cartItems"></div>
 
-    <!-- Map -->
-    <!-- <h6 class="mt-4 fw-semibold text-purple">Alamat Pengiriman</h6>
-    <div id="map" style="height: 200px; border-radius: 10px; overflow: hidden;" class="mb-2"></div>
-    <p class="small text-muted" id="distanceInfo">Mengukur jarak ke lokasi...</p> -->
+
+    <!-- Spacer agar total tetap di bawah -->
+    <div style="flex-grow: 1;"></div>
 
     <!-- Total -->
     <div class="border-top pt-3 mt-3">
@@ -125,16 +122,9 @@
   </div>
 </div>
 
-<!-- Overlay untuk efek gelap -->
-<div id="overlay-dark" class="overlay-dark">
 
-  display: none;
-  position: fixed;
-  top: 0; left: 0; 
-  width: 100%; height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: 1040;
-"></div>
+<!-- Overlay untuk efek gelap cart -->
+<div id="overlay-dark" class="overlay-dark"></div>
 
 
 
@@ -351,7 +341,7 @@
         </div>
         <div class="row g-4" id="productList">
           <!-- Produk 1 -->
-          <div class="col-12 col-sm-6 col-lg-4" data-category="Pria" data-price="75000">
+          <div class="col-12 col-sm-6 col-lg-4" data-category="Pria" data-price="75000" data-size="Large" data-stock="5">
             <div class="card h-100 shadow-sm">
               <img src="assets/itachi.png" class="card-img-top" alt="Kostum Naruto">
               <div class="card-body">
@@ -360,7 +350,8 @@
                   <span class="badge bg-purple-available">Tersedia</span>
                 </div>
                 <p class="mb-1 text-muted small">Kategori: <strong>Pria</strong></p>
-                <p class="card-text small text-muted mb-1">Ukuran: M, L, XL</p>
+                <p class="card-text small text-muted mb-1 product-size">Ukuran: L </p>
+                <p class="card-text small text-muted mb-1">Stok: <strong class="product-stock">5</strong></p>
                 <p class="card-text small text-muted">Sempurna untuk event anime atau photoshoot bertema ninja.</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <span class="fw-bold text-purple">Rp75.000</span>
@@ -371,27 +362,50 @@
           </div>
 
           <!-- Produk 2 -->
-          <div class="col-12 col-sm-6 col-lg-4" data-category="Anak-anak" data-price="85000">
-            <div class="card h-100 shadow-sm">
-              <img src="assets/nezuko.png" class="card-img-top" alt="Kostum Nezuko">
-              <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center mb-2">
-                  <h6 class="card-title fw-semibold mb-0">Kostum Demon Slayer Nezuko</h6>
-                  <span class="badge bg-purple-booked">Terbooking</span>
-                </div>
-                <p class="mb-1 text-muted small">Kategori: <strong>Anak-anak</strong></p>
-                <p class="card-text small text-muted mb-1">Ukuran: S, M</p>
-                <p class="card-text small text-muted">Desain berkualitas tinggi, cocok untuk cosplay Nezuko.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <span class="fw-bold text-purple">Rp85.000</span>
-                  <button class="btn btn-outline-dark btn-sm" disabled>Sewa Sekarang</button>
-                </div>
-              </div>
-            </div>
-          </div>
+<!-- Produk 2 -->
+<div class="col-12 col-sm-6 col-lg-4" data-category="Anak-anak" data-price="85000" data-size="Small" data-stock="0">
+  <div class="card h-100 shadow-sm">
+    <img src="assets/nezuko.png" class="card-img-top" alt="Kostum Nezuko">
+    <div class="card-body">
+      <div class="d-flex justify-content-between align-items-center mb-2">
+        <h6 class="card-title fw-semibold mb-0">Kostum Demon Slayer Nezuko</h6>
+        <span class="badge bg-purple-booked">Terbooking</span>
+      </div>
+
+      <p class="mb-1 text-muted small">Kategori: <strong>Anak-anak</strong></p>
+      <p class="card-text small text-muted mb-1 product-size">Ukuran: S</p>
+      <p class="card-text small text-muted mb-1">Stok: <strong class="product-stock">0</strong></p>
+      <p class="card-text small text-muted">Desain berkualitas tinggi, cocok untuk cosplay Nezuko.</p>
+
+      <div class="d-flex justify-content-between align-items-center">
+        <span class="fw-bold text-purple">Rp85.000</span>
+        <button class="btn btn-outline-dark btn-sm" disabled>Sewa Sekarang</button>
+      </div>
+
+      <!-- Dropdown Availability -->
+      <div class="availability-dropdown position-relative mt-3">
+        <button class="btn btn-sm text-purple fw-semibold toggle-availability border-0 bg-transparent p-0">
+          Cek Ketersediaan Produk ▾
+        </button>
+<div class="availability-list shadow position-absolute rounded p-3" style="min-width: 220px; z-index: 10;">
+
+          <div class="text-purple fw-semibold mb-2">Tanggal Tersedia:</div>
+          <ul class="list-unstyled mb-0 small">
+            <li>✅ 10 Juni 2025</li>
+            <li>✅ 12 Juni 2025</li>
+            <li>✅ 15 Juni 2025</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
 
           <!-- Produk 3 -->
-          <div class="col-12 col-sm-6 col-lg-4" data-category="Wanita" data-price="70000">
+          <div class="col-12 col-sm-6 col-lg-4" data-category="Wanita" data-price="70000"  data-size="Medium" data-stock="3">
             <div class="card h-100 shadow-sm">
               <img src="assets/noboro.png" class="card-img-top" alt="Kostum Noboro">
               <div class="card-body">
@@ -400,47 +414,8 @@
                   <span class="badge bg-purple-available">Tersedia</span>
                 </div>
                 <p class="mb-1 text-muted small">Kategori: <strong>Wanita</strong></p>
-                <p class="card-text small text-muted mb-1">Ukuran: S, M, L</p>
-                <p class="card-text small text-muted">Tampil percaya diri sebagai karakter Noboro yang bohai.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <span class="fw-bold text-purple">Rp70.000</span>
-                  <button class="btn btn-outline-dark btn-sm">Sewa Sekarang</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-             <!-- Produk 3 -->
-          <div class="col-12 col-sm-6 col-lg-4" data-category="Wanita" data-price="70000">
-            <div class="card h-100 shadow-sm">
-              <img src="assets/noboro.png" class="card-img-top" alt="Kostum Noboro">
-              <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center mb-2">
-                  <h6 class="card-title fw-semibold mb-0">Kostum Jujutsu Kaisen Noboro</h6>
-                  <span class="badge bg-purple-available">Tersedia</span>
-                </div>
-                <p class="mb-1 text-muted small">Kategori: <strong>Wanita</strong></p>
-                <p class="card-text small text-muted mb-1">Ukuran: S, M, L</p>
-                <p class="card-text small text-muted">Tampil percaya diri sebagai karakter Noboro yang bohai.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <span class="fw-bold text-purple">Rp70.000</span>
-                  <button class="btn btn-outline-dark btn-sm">Sewa Sekarang</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-             <!-- Produk 3 -->
-          <div class="col-12 col-sm-6 col-lg-4" data-category="Wanita" data-price="70000">
-            <div class="card h-100 shadow-sm">
-              <img src="assets/noboro.png" class="card-img-top" alt="Kostum Noboro">
-              <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center mb-2">
-                  <h6 class="card-title fw-semibold mb-0">Kostum Jujutsu Kaisen Noboro</h6>
-                  <span class="badge bg-purple-available">Tersedia</span>
-                </div>
-                <p class="mb-1 text-muted small">Kategori: <strong>Wanita</strong></p>
-                <p class="card-text small text-muted mb-1">Ukuran: S, M, L</p>
+                <p class="card-text small text-muted mb-1 product-size">Ukuran: M </p>
+                <p class="card-text small text-muted mb-1">Stok: <strong class="product-stock">3</strong></p>
                 <p class="card-text small text-muted">Tampil percaya diri sebagai karakter Noboro yang bohai.</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <span class="fw-bold text-purple">Rp70.000</span>

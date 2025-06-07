@@ -89,31 +89,48 @@ document.addEventListener("DOMContentLoaded", () => {
   categoryRadios.forEach(radio => radio.addEventListener("change", filterByCategory));
   filterByCategory();
 
-  // === BAGIAN 3: CART ===
 
 // === BAGIAN 3: CART ===
 const cartBody = document.querySelector(".offcanvas-body");
 const cartItemsContainer = document.createElement("div");
-const subtotalElement = document.querySelector(".offcanvas-body .border-top .d-flex:nth-child(1) span:last-child");
-const totalElement = document.querySelector(".offcanvas-body .border-top .d-flex:nth-child(2) span:last-child");
+const subtotalElement = document.getElementById("subtotal");
+const totalElement = document.getElementById("total");
 const cartBadge = document.getElementById("cartBadge");
 
 cartItemsContainer.id = "dynamicCartItems";
 cartItemsContainer.className = "mb-4";
-cartBody.insertBefore(cartItemsContainer, cartBody.querySelector(".mb-3.mt-4"));
+cartBody.insertBefore(cartItemsContainer, document.getElementById("cartItems").nextSibling);
 
 const buttons = document.querySelectorAll(".btn.btn-outline-dark.btn-sm:not([disabled])");
 
 buttons.forEach(button => {
   button.addEventListener("click", () => {
     const card = button.closest(".card");
+    const parentCol = card.closest("[data-category]");
     const title = card.querySelector(".card-title").textContent;
-    const category = card.parentElement.getAttribute("data-category");
-    const price = parseInt(card.parentElement.getAttribute("data-price"));
+    const category = parentCol.getAttribute("data-category");
+    const price = parseInt(parentCol.getAttribute("data-price"));
+    const stock = parseInt(parentCol.getAttribute("data-stock")) || 1;
+    const sizeElement = card.querySelector(".product-size");
+    const size = sizeElement ? sizeElement.textContent.replace("Ukuran: ", "") : "N/A";
     const imageSrc = card.querySelector("img").src;
-    const uniqueID = Date.now();
 
-    // === ANIMASI TERBANG KE KERANJANG ===
+    const today = new Date();
+    const startDate = formatDate(today);
+    const endDate = formatDate(addDays(today, 2)); // default 3 hari
+    const duration = 3;
+
+    // === CEK STOK TERPAKAI DI KERANJANG ===
+    const existingItems = [...cartItemsContainer.querySelectorAll(".cart-item")].filter(item => {
+      return item.querySelector("h6").textContent === title;
+    });
+
+    if (existingItems.length >= stock) {
+      alert("Stok tidak mencukupi untuk menambahkan produk ini ke keranjang.");
+      return;
+    }
+
+    // === ANIMASI TERBANG ===
     const cartIcon = document.querySelector('[data-bs-target="#offcanvasCart"]');
     const imgClone = card.querySelector("img").cloneNode(true);
     const imgRect = card.querySelector("img").getBoundingClientRect();
@@ -145,6 +162,7 @@ buttons.forEach(button => {
     cartItem.className = "cart-item d-flex gap-3 rounded shadow-sm p-3 mb-3";
     cartItem.style.background = "linear-gradient(to bottom right, #f3e8ff, #ede9fe)";
     cartItem.style.fontSize = "0.875rem";
+    cartItem.setAttribute("data-stock", stock);
 
     cartItem.innerHTML = `
       <img src="${imageSrc}" alt="Produk" style="width: 60px; height: 60px; object-fit: cover;" class="rounded flex-shrink-0">
@@ -152,20 +170,17 @@ buttons.forEach(button => {
         <div class="pe-3" style="max-width: calc(100% - 110px);">
           <h6 class="mb-1 fw-semibold" style="font-size: 0.85rem;">${title}</h6>
           <span class="badge category-badge mb-1">${category}</span>
-          <p class="size-label mb-1" style="font-size: 0.8rem;">Pilih Ukuran:</p>
-          <div class="d-flex gap-2 mb-2">
-            <input type="radio" class="btn-check" name="size${uniqueID}" id="sizeM${uniqueID}" autocomplete="off">
-            <label class="btn size-circle" for="sizeM${uniqueID}">M</label>
-            <input type="radio" class="btn-check" name="size${uniqueID}" id="sizeL${uniqueID}" autocomplete="off" checked>
-            <label class="btn size-circle" for="sizeL${uniqueID}">L</label>
-            <input type="radio" class="btn-check" name="size${uniqueID}" id="sizeXL${uniqueID}" autocomplete="off">
-            <label class="btn size-circle" for="sizeXL${uniqueID}">XL</label>
+          <div class="text-muted" style="font-size: 0.75rem;">
+            <div>Ukuran: <strong>${size}</strong></div>
+            <div>Stok tersedia: <strong>${stock}</strong></div>
+            <span class="rental-dates">${startDate} – ${endDate}</span><br>
+            <div class="rental-duration">Durasi: ${duration} hari</div>
           </div>
         </div>
         <div class="d-flex flex-column align-items-end justify-content-between" style="min-width: 100px;">
           <div class="qty-wrapper d-flex align-items-center gap-2 justify-content-end mb-2">
             <button class="qty-icon rounded px-2" style="font-size: 0.8rem;">–</button>
-            <span class="qty-value" style="font-size: 0.8rem;">1</span>
+            <span class="qty-value" style="font-size: 0.8rem;">${duration}</span>
             <button class="qty-icon rounded px-2" style="font-size: 0.8rem;">+</button>
           </div>
           <div class="fw-semibold text-dark price" style="font-size: 0.875rem;" data-base-price="${price}">
@@ -183,13 +198,17 @@ buttons.forEach(button => {
     const qtyPlus = cartItem.querySelector(".qty-wrapper button:last-child");
     const qtyValue = cartItem.querySelector(".qty-wrapper .qty-value");
     const priceDisplay = cartItem.querySelector(".price");
+    const rentalDates = cartItem.querySelector(".rental-dates");
+    const rentalDuration = cartItem.querySelector(".rental-duration");
 
     qtyMinus.addEventListener("click", (event) => {
-      event.stopPropagation(); // cegah sidebar nutup
-      let qty = parseInt(qtyValue.textContent);
-      if (qty > 1) {
-        qty--;
-        qtyValue.textContent = qty;
+      event.stopPropagation();
+      let duration = parseInt(qtyValue.textContent);
+      if (duration > 3) {
+        duration -= 3;
+        qtyValue.textContent = duration;
+        rentalDates.textContent = `${formatDate(today)} – ${formatDate(addDays(today, duration - 1))}`;
+        rentalDuration.textContent = `Durasi: ${duration} hari`;
       } else {
         cartItem.remove();
       }
@@ -199,16 +218,26 @@ buttons.forEach(button => {
 
     qtyPlus.addEventListener("click", (event) => {
       event.stopPropagation();
-      let qty = parseInt(qtyValue.textContent);
-      qty++;
-      qtyValue.textContent = qty;
+      let duration = parseInt(qtyValue.textContent);
+      const stock = parseInt(cartItem.getAttribute("data-stock"));
+      const currentItems = cartItemsContainer.querySelectorAll(".cart-item").length;
+
+      if (currentItems > stock - 1) {
+        alert("Stok tidak mencukupi.");
+        return;
+      }
+
+      duration += 3;
+      qtyValue.textContent = duration;
+      rentalDates.textContent = `${formatDate(today)} – ${formatDate(addDays(today, duration - 1))}`;
+      rentalDuration.textContent = `Durasi: ${duration} hari`;
       updateTotal();
       updateBadge();
     });
   });
 });
 
-// === FUNGSI HITUNG TOTAL DAN BADGE ===
+// === HITUNG TOTAL DAN BADGE ===
 function updateTotal() {
   const allItems = cartItemsContainer.querySelectorAll(".cart-item");
   let newSubtotal = 0;
@@ -216,9 +245,9 @@ function updateTotal() {
   allItems.forEach(item => {
     const qty = parseInt(item.querySelector(".qty-value").textContent);
     const basePrice = parseInt(item.querySelector(".price").getAttribute("data-base-price"));
-    newSubtotal += basePrice * qty;
-
-    item.querySelector(".price").textContent = `Rp${(basePrice * qty).toLocaleString()}`;
+    const total = basePrice * (qty / 3);
+    newSubtotal += total;
+    item.querySelector(".price").textContent = `Rp${total.toLocaleString()}`;
   });
 
   subtotalElement.textContent = `Rp${newSubtotal.toLocaleString()}`;
@@ -227,19 +256,52 @@ function updateTotal() {
 
 function updateBadge() {
   const allItems = cartItemsContainer.querySelectorAll(".cart-item");
-  let totalQty = 0;
+  const totalItems = allItems.length;
 
-  allItems.forEach(item => {
-    totalQty += parseInt(item.querySelector(".qty-value").textContent);
-  });
-
-  if (totalQty > 0) {
+  if (totalItems > 0) {
     cartBadge.style.display = "inline-block";
-    cartBadge.textContent = totalQty;
+    cartBadge.textContent = totalItems;
   } else {
     cartBadge.style.display = "none";
   }
 }
 
+// === TANGGAL ===
+function formatDate(date) {
+  const options = { day: "2-digit", month: "long", year: "numeric" };
+  return date.toLocaleDateString("id-ID", options);
+}
+
+function addDays(date, days) {
+  const result = new Date(date);
+  result.setDate(result.getDate() + days);
+  return result;
+}
+
+
 
 });
+
+
+// === BAGIAN 4: DROPDOWN KETERSEDIAAN PRODUK ===
+document.querySelectorAll('.toggle-availability').forEach(button => {
+  button.addEventListener('click', function (e) {
+    e.stopPropagation();
+    const dropdown = this.closest('.availability-dropdown');
+    dropdown.classList.toggle('show');
+
+    // Tutup dropdown lain
+    document.querySelectorAll('.availability-dropdown').forEach(item => {
+      if (item !== dropdown) item.classList.remove('show');
+    });
+  });
+});
+
+document.addEventListener('click', function (e) {
+  document.querySelectorAll('.availability-dropdown').forEach(dropdown => {
+    if (!dropdown.contains(e.target)) {
+      dropdown.classList.remove('show');
+    }
+  });
+});
+
