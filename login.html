@@ -26,6 +26,7 @@
 
 
 <!-- Navbar -->
+<!-- Navbar -->
 <nav class="navbar navbar-expand-lg shadow-sm sticky-top" style="background-color: #f4f0ff;">
   <div class="container px-3 d-flex justify-content-between align-items-center">
 
@@ -34,33 +35,21 @@
       <i class="bi bi-disc me-2 fs-2"></i> CCC RENTAL
     </a>
 
-      <!-- Akun -->
-    <div class="d-flex align-items-center gap-2 order-lg-last">
-   
-      <a href="login.html" class="btn btn-light border rounded-circle d-flex align-items-center justify-content-center" style="width: 34px; height: 34px;">
-        <i class="bi bi-person-fill fs-6" style="color: #6b21a8;"></i>
-      </a>
-      <a href="login.html" class="d-lg-inline fw-semibold small text-decoration-none" style="color: #6b21a8;">Login</a>
-
-      <!-- Cart -->
-    <a href="#" class="btn btn-light border d-flex align-items-center justify-content-center px-2 py-1 position-relative" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart">
-      <i class="bi bi-cart fs-6 me-lg-1" style="color: #6b21a8;"></i>
-      <span class="d-none d-lg-inline fw-semibold small" style="color: #6b21a8;">My Cart</span>
-      <span id="cartBadge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="display: none; font-size: 0.65rem;">0</span>
-    </a>
-      <!-- Hamburger -->
-      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <i class="bi bi-list fs-2" style="color: #6b21a8;"></i>
-      </button>
-    </div>
+    <!-- HAMBURGER (mobile) -->
+    <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <i class="bi bi-list fs-2" style="color: #6b21a8;"></i>
+    </button>
 
     <!-- MENU NAV -->
     <div class="collapse navbar-collapse order-lg-0" id="navbarNav">
-      <ul class="navbar-nav ms-auto text-center text-lg-start w-100 justify-content-end gap-1">
+      <ul class="navbar-nav ms-auto text-center text-lg-start w-100 justify-content-end gap-1 align-items-center">
         <li class="nav-item">
           <a class="nav-link px-2 py-1 fw-normal small" href="index.html" style="color: #6b21a8;">Home</a>
         </li>
-        <li class="nav-item dropdown">
+          <li class="nav-item">
+          <a class="nav-link px-2 py-1 fw-normal small" href="index.html#product" style="color: #6b21a8;">Product</a>
+        </li>
+        <!-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle px-2 py-1 fw-normal small" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #6b21a8;">
             Costumes
           </a>
@@ -69,13 +58,36 @@
             <li><a class="dropdown-item small" href="#">Fantasy</a></li>
             <li><a class="dropdown-item small" href="#">Super Hero</a></li>
           </ul>
-        </li>
+        </li> -->
         <li class="nav-item">
           <a class="nav-link px-2 py-1 fw-normal small" href="pesanan.html" style="color: #6b21a8;">Pesanan</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link px-2 py-1 fw-normal small" href="#" style="color: #6b21a8;">Pengembalian</a>
+          <a class="nav-link px-2 py-1 fw-normal small" href="pengembalian.html" style="color: #6b21a8;">Pengembalian</a>
         </li>
+
+        <!-- User Profile -->
+        <li class="nav-item d-flex align-items-center gap-1 px-2">
+          <i class="bi bi-person-fill fs-5" style="color: #6b21a8;"></i>
+          <span class="fw-normal small" style="color: #6b21a8;">Arhan Mani</span>
+        </li>
+
+        <!-- Cart -->
+        <li class="nav-item">
+          <a href="#" class="btn btn-light border d-flex align-items-center justify-content-center px-2 py-1 position-relative" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart">
+            <i class="bi bi-cart fs-6 me-1" style="color: #6b21a8;"></i>
+            <span class="fw-semibold small" style="color: #6b21a8;">My Cart</span>
+            <span id="cartBadge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="display: none; font-size: 0.65rem;">0</span>
+          </a>
+        </li>
+
+        <!-- Login -->
+        <!-- <li class="nav-item">
+          <a href="login.html" class="but-log btn btn-sm d-flex align-items-center gap-1 px-2 py-1">
+            <i class="bi bi-person-fill text-white fs-5"></i>
+            <span class="fw-semibold small text-white">Login</span>
+          </a>
+        </li> -->
       </ul>
     </div>
   </div>
