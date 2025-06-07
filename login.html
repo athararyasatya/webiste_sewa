@@ -71,7 +71,7 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link px-2 py-1 fw-normal small" href="#" style="color: #6b21a8;">Pesanan</a>
+          <a class="nav-link px-2 py-1 fw-normal small" href="pesanan.html" style="color: #6b21a8;">Pesanan</a>
         </li>
         <li class="nav-item">
           <a class="nav-link px-2 py-1 fw-normal small" href="#" style="color: #6b21a8;">Pengembalian</a>
@@ -80,6 +80,51 @@
     </div>
   </div>
 </nav>
+
+<!-- Offcanvas Cart sidebar -->
+  <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" id="offcanvasCart">
+    <div class="offcanvas-header text-white" style="background: linear-gradient(135deg, #6f42c1, #000000);">
+      <h5 class="offcanvas-title d-flex align-items-center">
+        <i class="bi bi-disc me-2"></i> CCC RENTAL
+      </h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+
+    <div class="offcanvas-body p-3 d-flex flex-column h-100" style="background: #f8f5ff; color: #1e1b4b;">
+      <h5 class="mb-3 fw-semibold text-purple">Keranjang Saya</h5>
+
+    <!-- Alert Informasi -->
+  <div class="alert alert-warning py-2 px-3 mb-3 rounded-3" role="alert" style="font-size: 0.85rem;">
+    ⏱️ Durasi sewa minimal adalah <strong>3 hari</strong> dan hanya bisa ditambah per <strong>3 hari</strong>.<br>
+    Jika dikurangi di bawah 3 hari, produk akan otomatis dihapus dari keranjang.
+  </div>
+
+  <!-- Dinamis isi produk -->
+  <div id="cartItems"></div>
+
+
+      <!-- Spacer agar total tetap di bawah -->
+      <div style="flex-grow: 1;"></div>
+
+      <!-- Total -->
+      <div class="border-top pt-3 mt-3">
+        <div class="d-flex justify-content-between mb-1">
+          <span>Subtotal</span>
+          <span id="subtotal">Rp0</span>
+        </div>
+        <div class="d-flex justify-content-between fw-bold text-purple">
+          <span>Total</span>
+          <span id="total">Rp0</span>
+        </div>
+        <button class="btn w-100 mt-3 text-white fw-semibold" style="background-color: #9333ea;">Checkout Sekarang</button>
+      </div>
+    </div>
+  </div>
+
+
+<!-- Overlay untuk efek gelap cart -->
+<div id="overlay-dark" class="overlay-dark"></div>
+
 
 <!-- Hero Section Login -->
 <!-- Hero Section Login -->

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>COSRENT | Sewa Kostum Cosplay</title>
+  <title>CCC RENTAL | Sewa Kostum Cosplay</title>
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -71,7 +71,7 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link px-2 py-1 fw-normal small" href="#" style="color: #6b21a8;">Pesanan</a>
+          <a class="nav-link px-2 py-1 fw-normal small" href="pesanan.html" style="color: #6b21a8;">Pesanan</a>
         </li>
         <li class="nav-item">
           <a class="nav-link px-2 py-1 fw-normal small" href="#" style="color: #6b21a8;">Pengembalian</a>
@@ -81,46 +81,46 @@
   </div>
 </nav>
 
-<!-- Offcanvas Cart -->
-<!-- Offcanvas Cart -->
-<div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" id="offcanvasCart">
-  <div class="offcanvas-header text-white" style="background: linear-gradient(135deg, #6f42c1, #000000);">
-    <h5 class="offcanvas-title d-flex align-items-center">
-      <i class="bi bi-disc me-2"></i> CCC RENTAL
-    </h5>
-    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+
+<!-- Offcanvas Cart sidebar -->
+  <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" id="offcanvasCart">
+    <div class="offcanvas-header text-white" style="background: linear-gradient(135deg, #6f42c1, #000000);">
+      <h5 class="offcanvas-title d-flex align-items-center">
+        <i class="bi bi-disc me-2"></i> CCC RENTAL
+      </h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+
+    <div class="offcanvas-body p-3 d-flex flex-column h-100" style="background: #f8f5ff; color: #1e1b4b;">
+      <h5 class="mb-3 fw-semibold text-purple">Keranjang Saya</h5>
+
+    <!-- Alert Informasi -->
+  <div class="alert alert-warning py-2 px-3 mb-3 rounded-3" role="alert" style="font-size: 0.85rem;">
+    ⏱️ Durasi sewa minimal adalah <strong>3 hari</strong> dan hanya bisa ditambah per <strong>3 hari</strong>.<br>
+    Jika dikurangi di bawah 3 hari, produk akan otomatis dihapus dari keranjang.
   </div>
 
-  <div class="offcanvas-body p-3 d-flex flex-column h-100" style="background: #f8f5ff; color: #1e1b4b;">
-    <h5 class="mb-3 fw-semibold text-purple">Keranjang Saya</h5>
-
-   <!-- Alert Informasi -->
-<div class="alert alert-warning py-2 px-3 mb-3 rounded-3" role="alert" style="font-size: 0.85rem;">
-  ⏱️ Durasi sewa minimal adalah <strong>3 hari</strong> dan hanya bisa ditambah per <strong>3 hari</strong>.<br>
-  Jika dikurangi di bawah 3 hari, produk akan otomatis dihapus dari keranjang.
-</div>
-
-<!-- Dinamis isi produk -->
-<div id="cartItems"></div>
+  <!-- Dinamis isi produk -->
+  <div id="cartItems"></div>
 
 
-    <!-- Spacer agar total tetap di bawah -->
-    <div style="flex-grow: 1;"></div>
+      <!-- Spacer agar total tetap di bawah -->
+      <div style="flex-grow: 1;"></div>
 
-    <!-- Total -->
-    <div class="border-top pt-3 mt-3">
-      <div class="d-flex justify-content-between mb-1">
-        <span>Subtotal</span>
-        <span id="subtotal">Rp0</span>
+      <!-- Total -->
+      <div class="border-top pt-3 mt-3">
+        <div class="d-flex justify-content-between mb-1">
+          <span>Subtotal</span>
+          <span id="subtotal">Rp0</span>
+        </div>
+        <div class="d-flex justify-content-between fw-bold text-purple">
+          <span>Total</span>
+          <span id="total">Rp0</span>
+        </div>
+        <button class="btn w-100 mt-3 text-white fw-semibold" style="background-color: #9333ea;">Checkout Sekarang</button>
       </div>
-      <div class="d-flex justify-content-between fw-bold text-purple">
-        <span>Total</span>
-        <span id="total">Rp0</span>
-      </div>
-      <button class="btn w-100 mt-3 text-white fw-semibold" style="background-color: #9333ea;">Checkout Sekarang</button>
     </div>
   </div>
-</div>
 
 
 <!-- Overlay untuk efek gelap cart -->
@@ -182,6 +182,8 @@
   </div>
 </section>
 
+
+<!-- Rules penyewaan -->
 <section class="py-5 px-3" style="background: linear-gradient(135deg, #1f0036, #2a004d);">
   <div class="container">
 
@@ -192,21 +194,20 @@
         <p class="text-white-50">Silakan baca aturan dan proses sebelum menyewa kostum cosplay.</p>
 
         <!-- Toggle Button -->
-<button class="btn btn-outline-light fw-bold mt-3 d-flex align-items-center gap-2" 
-        type="button" 
-        data-bs-toggle="collapse" 
-        data-bs-target="#alurPenyewaan" 
-        aria-expanded="false" 
-        aria-controls="alurPenyewaan">
-  Lihat Alur Penyewaan Kostum
-  <i class="bi bi-chevron-down transition" id="arrowIcon"></i>
-</button>
+  <button class="btn btn-outline-light fw-bold mt-3 d-flex align-items-center gap-2" 
+          type="button" 
+          data-bs-toggle="collapse" 
+          data-bs-target="#alurPenyewaan" 
+          aria-expanded="false" 
+          aria-controls="alurPenyewaan">
+    Lihat Alur Penyewaan Kostum
+    <i class="bi bi-chevron-down transition" id="arrowIcon"></i>
+  </button>
+        </div>
       </div>
-    </div>
 
-    <!-- Collapse: tanpa padding/margin di elemen ini -->
     <div class="collapse" id="alurPenyewaan">
-      <!-- Bungkus isi dengan div baru yang punya padding/margin -->
+     
       <div class="mt-4 pt-2">
         <div class="row gx-3 gy-4">
         
@@ -300,10 +301,10 @@
 
   </div>
 </section>
+<!-- Rules penyewaan -->
 
 
-
-<!-- Hero awal -->
+<!-- Product -->
 
 <section class="py-5 bg-light">
   <div class="container px-4">
@@ -362,47 +363,44 @@
           </div>
 
           <!-- Produk 2 -->
-<!-- Produk 2 -->
-<div class="col-12 col-sm-6 col-lg-4" data-category="Anak-anak" data-price="85000" data-size="Small" data-stock="0">
-  <div class="card h-100 shadow-sm">
-    <img src="assets/nezuko.png" class="card-img-top" alt="Kostum Nezuko">
-    <div class="card-body">
-      <div class="d-flex justify-content-between align-items-center mb-2">
-        <h6 class="card-title fw-semibold mb-0">Kostum Demon Slayer Nezuko</h6>
-        <span class="badge bg-purple-booked">Terbooking</span>
-      </div>
+          <div class="col-12 col-sm-6 col-lg-4" data-category="Anak-anak" data-price="85000" data-size="Small" data-stock="0">
+            <div class="card h-100 shadow-sm">
+              <img src="assets/nezuko.png" class="card-img-top" alt="Kostum Nezuko">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <h6 class="card-title fw-semibold mb-0">Kostum Demon Slayer Nezuko</h6>
+                  <span class="badge bg-purple-booked">Terbooking</span>
+                </div>
 
-      <p class="mb-1 text-muted small">Kategori: <strong>Anak-anak</strong></p>
-      <p class="card-text small text-muted mb-1 product-size">Ukuran: S</p>
-      <p class="card-text small text-muted mb-1">Stok: <strong class="product-stock">0</strong></p>
-      <p class="card-text small text-muted">Desain berkualitas tinggi, cocok untuk cosplay Nezuko.</p>
+                <p class="mb-1 text-muted small">Kategori: <strong>Anak-anak</strong></p>
+                <p class="card-text small text-muted mb-1 product-size">Ukuran: S</p>
+                <p class="card-text small text-muted mb-1">Stok: <strong class="product-stock">0</strong></p>
+                <p class="card-text small text-muted">Desain berkualitas tinggi, cocok untuk cosplay Nezuko.</p>
 
-      <div class="d-flex justify-content-between align-items-center">
-        <span class="fw-bold text-purple">Rp85.000</span>
-        <button class="btn btn-outline-dark btn-sm" disabled>Sewa Sekarang</button>
-      </div>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="fw-bold text-purple">Rp85.000</span>
+                  <button class="btn btn-outline-dark btn-sm" disabled>Sewa Sekarang</button>
+                </div>
 
-      <!-- Dropdown Availability -->
-      <div class="availability-dropdown position-relative mt-3">
-        <button class="btn btn-sm text-purple fw-semibold toggle-availability border-0 bg-transparent p-0">
-          Cek Ketersediaan Produk ▾
-        </button>
-<div class="availability-list shadow position-absolute rounded p-3" style="min-width: 220px; z-index: 10;">
+                <!-- Dropdown Availability -->
+                <div class="availability-dropdown position-relative mt-3">
+                  <button class="btn btn-sm text-purple fw-semibold toggle-availability border-0 bg-transparent p-0">
+                    Cek Ketersediaan Produk ▾
+                  </button>
+          <div class="availability-list shadow position-absolute rounded p-3" style="min-width: 220px; z-index: 10;">
 
-          <div class="text-purple fw-semibold mb-2">Tanggal Tersedia:</div>
-          <ul class="list-unstyled mb-0 small">
-            <li>✅ 10 Juni 2025</li>
-            <li>✅ 12 Juni 2025</li>
-            <li>✅ 15 Juni 2025</li>
-          </ul>
-        </div>
-      </div>
+                    <div class="text-purple fw-semibold mb-2">Tanggal Tersedia:</div>
+                    <ul class="list-unstyled mb-0 small">
+                      <li>✅ 10 Juni 2025</li>
+                      <li>✅ 12 Juni 2025</li>
+                      <li>✅ 15 Juni 2025</li>
+                    </ul>
+                  </div>
+                </div>
 
-    </div>
-  </div>
-</div>
-
-
+              </div>
+            </div>
+          </div>
 
           <!-- Produk 3 -->
           <div class="col-12 col-sm-6 col-lg-4" data-category="Wanita" data-price="70000"  data-size="Medium" data-stock="3">
@@ -430,7 +428,8 @@
   </div>
 </section>
 
-
+<!-- Product -->
+ 
 <!-- Footer -->
 <footer class="text-light pt-5 pb-4" style="background: linear-gradient(135deg, #6f42c1, #000000); border-top-left-radius: 12px; border-top-right-radius: 12px;">
   <div class="container">

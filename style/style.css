@@ -506,6 +506,109 @@ color: #3444;
 
 
 
+/* Pesanan */
+
+/* Hero Card tidak boleh overflow */
+.hero-card {
+  overflow: hidden;
+  position: relative;
+}
+
+/* Scrolling wrapper: scroll horizontal & max width penuh */
+.scrolling-wrapper {
+  overflow-x: auto;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  max-width: 100%;
+  padding-bottom: 8px;
+  padding-right: 16px; /* tambahkan jarak kanan agar tidak mepet */
+}
+
+
+/* Card di dalam scroll horizontal */
+.scrolling-wrapper .card {
+  display: inline-block;
+  min-width: 250px;
+  max-width: 250px;
+  flex-shrink: 0;
+}
+
+/* Scrollbar Custom untuk wrapper horizontal */
+.scrolling-wrapper::-webkit-scrollbar {
+  height: 8px; /* Scroll horizontal */
+}
+
+.scrolling-wrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrolling-wrapper::-webkit-scrollbar-thumb {
+  background: rgba(100, 100, 255, 0.4); /* Warna biru muda transparan */
+  border-radius: 10px;
+}
+
+.scrolling-wrapper::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 100, 255, 0.7);
+}
+
+/* Untuk browser Firefox */
+.scrolling-wrapper {
+  scrollbar-color: rgba(100, 100, 255, 0.4) transparent;
+  scrollbar-width: thin;
+}
+  .btn-gradient-purple {
+    background: linear-gradient(135deg, #8e2de2, #4a00e0);
+    color: white;
+    border: none;
+  }
+
+  .btn-gradient-purple:hover {
+    background: linear-gradient(135deg, #7b1fa2, #3700b3);
+    color: white;
+  }
+
+  .bg-gradient-ungu {
+  background: linear-gradient(90deg, #a18cd1, #6a11cb); /* ungu muda ke ungu gelap */
+}
+
+.btn-gradient-purple {
+  background: linear-gradient(90deg, #a18cd1, #6a11cb);
+  color: white;
+  border: none;
+}
+
+.btn-gradient-purple:hover {
+  background: linear-gradient(90deg, #7b2cbf, #5f0f99);
+}
+
+.bg-purple-booked {
+  background-color: #a18cd1;
+  color: white;
+}
+
+
+
+/* Responsive agar rapi di hp */
+@media (max-width: 768px) {
+  .hero-card {
+    flex-direction: column;
+  }
+
+  .hero-image-wrapper {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-text {
+    width: 100%;
+  }
+}
+
+
+/* Pesanan */
+
 
 @media (max-width: 768px) {
   .hero-text {
