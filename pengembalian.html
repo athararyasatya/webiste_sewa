@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pesanan Saya | CCC RENTAL</title>
+  <title>Pengembalian | CCC RENTAL</title>
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -49,14 +49,14 @@
               </ul>
             </li>
             <li class="nav-item"><a class="nav-link px-2 py-1 fw-normal small" href="pesanan.html" style="color: #6b21a8;">Pesanan</a></li>
-            <li class="nav-item"><a class="nav-link px-2 py-1 fw-normal small" href="pengembalian.html" style="color: #6b21a8;">Pengembalian</a></li>
+            <li class="nav-item"><a class="nav-link px-2 py-1 fw-normal small" href="#" style="color: #6b21a8;">Pengembalian</a></li>
           </ul>
         </div>
       </div>
     </nav>
 <!-- Hero Section Pesanan -->
  
-<!-- SECTION STATUS PENYEWAAN -->
+<!-- SECTION PENGEMBALIAN -->
 <section class="hero-bg-wrapper py-5">
   <div class="container-fluid px-4">
     <div class="hero-card d-flex flex-column flex-md-row align-items-center justify-content-between gap-4 rounded-4 shadow p-4">
@@ -68,80 +68,90 @@
 
       <!-- KONTEN KANAN -->
       <div class="hero-text flex-grow-1 w-100" style="overflow-x: auto;">
-        <h1 class="fw-bold display-5 gradient-futuristic">Cek Status Penyewaanmu!</h1>
-        <p class="mb-4">Berikut adalah daftar pesananmu yang sedang dalam proses penyewaan. Scroll ke kanan untuk melihat semua pesanan.</p>
+        <h1 class="fw-bold display-5 gradient-futuristic">Pengembalian </h1>
+        <p class="mb-4">Berikut adalah daftar penyewaan yang perlu di kembalikan sesuai deadline </p>
 
-        <!-- WRAPPER CARD HORIZONTAL -->
+        <!-- ALAMAT TOKO -->
+<!-- Alamat Toko -->
+<div class="mb-4">
+  <h6 class="fw-semibold mb-1"><i class="bi bi-geo-alt-fill me-1"></i>Alamat Toko:</h6>
+  <p class="mb-2">Jl. Citra Raya Boulevard No.01 BlokS No.25, Panongan, Kec. Panongan, Kabupaten Tangerang, Banten 15711</p>
+  <a href="https://maps.app.goo.gl/m1haojAtcU1XHFWZ6"
+     target="_blank"
+     class="btn btn-sm but-alamat">
+    <i class="bi bi-map-fill me-1"></i>Cek di Google Maps
+  </a>
+</div>
+
+        <!-- WRAPPER CARD -->
         <div class="scrolling-wrapper d-flex flex-row gap-3" style="overflow-x: auto;">
 
-          <!-- CARD 1 -->
-          <div class="card shadow-sm border-0 p-3" style="min-width: 250px;">
+          <!-- CARD TERLAMBAT -->
+          <div class="card shadow-sm border-0 p-3 border-danger" style="min-width: 250px;">
             <div class="card-body">
-              <h6 class="fw-semibold mb-2">ID: <span class="text-muted">#A123</span></h6>
-              <p class="mb-1"><i class="bi bi-calendar-event me-1"></i>7 Juni 2025</p>
-              <p class="mb-1"><i class="bi bi-cash-coin me-1"></i><strong>Rp180.000</strong></p>
-              <span class="badge bg-purple-booked">Siap Di Ambil</span><br>
-              <button class="btn btn-sm btn-gradient-purple mt-3" data-bs-toggle="modal" data-bs-target="#modalPesanan">Lihat Detail</button>
+              <h6 class="fw-semibold mb-2">ID: <span class="text-muted">#L001</span></h6>
+              <p class="mb-1"><i class="bi bi-calendar-event me-1"></i>Deadline: 5 Juni 2025</p>
+              <p class="mb-1"><i class="bi bi-cash-coin me-1"></i><strong>Rp150.000</strong></p>
+              <p class="mb-1"><i class="bi bi-clock-fill text-danger me-1"></i><span class="text-danger fw-semibold">Terlambat 1 Hari</span></p>
+              <span class="badge bg-danger">Perlu Dikembalikan</span><br>
+              <button class="btn btn-sm btn-gradient-purple mt-3" data-bs-toggle="modal" data-bs-target="#modalTerlambat1">Lihat Detail</button>
             </div>
           </div>
 
-          <!-- CARD 2 -->
-          <div class="card shadow-sm border-0 p-3" style="min-width: 250px;">
+                    <div class="card shadow-sm border-0 p-3 border-danger" style="min-width: 250px;">
             <div class="card-body">
-              <h6 class="fw-semibold mb-2">ID: <span class="text-muted">#A124</span></h6>
-              <p class="mb-1"><i class="bi bi-calendar-event me-1"></i>8 Juni 2025</p>
-              <p class="mb-1"><i class="bi bi-cash-coin me-1"></i><strong>Rp270.000</strong></p>
-              <span class="badge bg-warning text-dark">Diproses</span><br>
-              <button class="btn btn-sm btn-gradient-purple mt-3" data-bs-toggle="modal" data-bs-target="#modalPesanan2">Lihat Detail</button>
+              <h6 class="fw-semibold mb-2">ID: <span class="text-muted">#L001</span></h6>
+              <p class="mb-1"><i class="bi bi-calendar-event me-1"></i>Deadline: 5 Juni 2025</p>
+              <p class="mb-1"><i class="bi bi-cash-coin me-1"></i><strong>Rp150.000</strong></p>
+              <p class="mb-1"><i class="bi bi-clock-fill text-danger me-1"></i><span class="text-danger fw-semibold">Terlambat 1 Hari</span></p>
+              <span class="badge bg-danger">Perlu Dikembalikan</span><br>
+              <button class="btn btn-sm btn-gradient-purple mt-3" data-bs-toggle="modal" data-bs-target="#modalTerlambat1">Lihat Detail</button>
             </div>
           </div>
 
-                    <!-- CARD 1 -->
-          <div class="card shadow-sm border-0 p-3" style="min-width: 250px;">
+                    <div class="card shadow-sm border-0 p-3 border-danger" style="min-width: 250px;">
             <div class="card-body">
-              <h6 class="fw-semibold mb-2">ID: <span class="text-muted">#A123</span></h6>
-              <p class="mb-1"><i class="bi bi-calendar-event me-1"></i>7 Juni 2025</p>
-              <p class="mb-1"><i class="bi bi-cash-coin me-1"></i><strong>Rp180.000</strong></p>
-              <span class="badge bg-purple-booked">Siap Di Ambil</span><br>
-              <button class="btn btn-sm btn-gradient-purple mt-3" data-bs-toggle="modal" data-bs-target="#modalPesanan">Lihat Detail</button>
+              <h6 class="fw-semibold mb-2">ID: <span class="text-muted">#L001</span></h6>
+              <p class="mb-1"><i class="bi bi-calendar-event me-1"></i>Deadline: 5 Juni 2025</p>
+              <p class="mb-1"><i class="bi bi-cash-coin me-1"></i><strong>Rp150.000</strong></p>
+              <p class="mb-1"><i class="bi bi-clock-fill text-danger me-1"></i><span class="text-danger fw-semibold">Terlambat 1 Hari</span></p>
+              <span class="badge bg-danger">Perlu Dikembalikan</span><br>
+              <button class="btn btn-sm btn-gradient-purple mt-3" data-bs-toggle="modal" data-bs-target="#modalTerlambat1">Lihat Detail</button>
             </div>
           </div>
 
-          <!-- CARD 2 -->
-          <div class="card shadow-sm border-0 p-3" style="min-width: 250px;">
+                    <div class="card shadow-sm border-0 p-3 border-danger" style="min-width: 250px;">
             <div class="card-body">
-              <h6 class="fw-semibold mb-2">ID: <span class="text-muted">#A124</span></h6>
-              <p class="mb-1"><i class="bi bi-calendar-event me-1"></i>8 Juni 2025</p>
-              <p class="mb-1"><i class="bi bi-cash-coin me-1"></i><strong>Rp270.000</strong></p>
-              <span class="badge bg-warning text-dark">Diproses</span><br>
-              <button class="btn btn-sm btn-gradient-purple mt-3" data-bs-toggle="modal" data-bs-target="#modalPesanan2">Lihat Detail</button>
+              <h6 class="fw-semibold mb-2">ID: <span class="text-muted">#L001</span></h6>
+              <p class="mb-1"><i class="bi bi-calendar-event me-1"></i>Deadline: 5 Juni 2025</p>
+              <p class="mb-1"><i class="bi bi-cash-coin me-1"></i><strong>Rp150.000</strong></p>
+              <p class="mb-1"><i class="bi bi-clock-fill text-danger me-1"></i><span class="text-danger fw-semibold">Terlambat 1 Hari</span></p>
+              <span class="badge bg-danger">Perlu Dikembalikan</span><br>
+              <button class="btn btn-sm btn-gradient-purple mt-3" data-bs-toggle="modal" data-bs-target="#modalTerlambat1">Lihat Detail</button>
             </div>
           </div>
 
-                    <!-- CARD 1 -->
-          <div class="card shadow-sm border-0 p-3" style="min-width: 250px;">
+                    <div class="card shadow-sm border-0 p-3 border-danger" style="min-width: 250px;">
             <div class="card-body">
-              <h6 class="fw-semibold mb-2">ID: <span class="text-muted">#A123</span></h6>
-              <p class="mb-1"><i class="bi bi-calendar-event me-1"></i>7 Juni 2025</p>
-              <p class="mb-1"><i class="bi bi-cash-coin me-1"></i><strong>Rp180.000</strong></p>
-              <span class="badge bg-purple-booked">Siap Di Ambil</span><br>
-              <button class="btn btn-sm btn-gradient-purple mt-3" data-bs-toggle="modal" data-bs-target="#modalPesanan">Lihat Detail</button>
+              <h6 class="fw-semibold mb-2">ID: <span class="text-muted">#L001</span></h6>
+              <p class="mb-1"><i class="bi bi-calendar-event me-1"></i>Deadline: 5 Juni 2025</p>
+              <p class="mb-1"><i class="bi bi-cash-coin me-1"></i><strong>Rp150.000</strong></p>
+              <p class="mb-1"><i class="bi bi-clock-fill text-danger me-1"></i><span class="text-danger fw-semibold">Terlambat 1 Hari</span></p>
+              <span class="badge bg-danger">Perlu Dikembalikan</span><br>
+              <button class="btn btn-sm btn-gradient-purple mt-3" data-bs-toggle="modal" data-bs-target="#modalTerlambat1">Lihat Detail</button>
             </div>
           </div>
 
-          <!-- CARD 2 -->
-          <div class="card shadow-sm border-0 p-3" style="min-width: 250px;">
+                    <div class="card shadow-sm border-0 p-3 border-danger" style="min-width: 250px;">
             <div class="card-body">
-              <h6 class="fw-semibold mb-2">ID: <span class="text-muted">#A124</span></h6>
-              <p class="mb-1"><i class="bi bi-calendar-event me-1"></i>8 Juni 2025</p>
-              <p class="mb-1"><i class="bi bi-cash-coin me-1"></i><strong>Rp270.000</strong></p>
-              <span class="badge bg-warning text-dark">Diproses</span><br>
-              <button class="btn btn-sm btn-gradient-purple mt-3" data-bs-toggle="modal" data-bs-target="#modalPesanan2">Lihat Detail</button>
+              <h6 class="fw-semibold mb-2">ID: <span class="text-muted">#L001</span></h6>
+              <p class="mb-1"><i class="bi bi-calendar-event me-1"></i>Deadline: 5 Juni 2025</p>
+              <p class="mb-1"><i class="bi bi-cash-coin me-1"></i><strong>Rp150.000</strong></p>
+              <p class="mb-1"><i class="bi bi-clock-fill text-danger me-1"></i><span class="text-danger fw-semibold">Terlambat 1 Hari</span></p>
+              <span class="badge bg-danger">Perlu Dikembalikan</span><br>
+              <button class="btn btn-sm btn-gradient-purple mt-3" data-bs-toggle="modal" data-bs-target="#modalTerlambat1">Lihat Detail</button>
             </div>
           </div>
-          
-
-
 
         </div> <!-- end scrolling-wrapper -->
       </div> <!-- end hero-text -->
@@ -150,114 +160,41 @@
   </div>
 </section>
 
-
-
-<!-- MODAL DETAIL PESANAN -->
-<div class="modal fade" id="modalPesanan" tabindex="-1" aria-labelledby="modalPesananLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content rounded-4 shadow border-0">
-
-      <!-- HEADER -->
-      <div class="modal-header bg-gradient-ungu text-white rounded-top-4">
-        <h5 class="modal-title fw-bold" id="modalPesananLabel">Detail Pesanan</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+<!-- MODAL DETAIL PENGEMBALIAN TERLAMBAT -->
+<div class="modal fade" id="modalTerlambat1" tabindex="-1" aria-labelledby="modalTerlambat1Label" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title fw-bold" id="modalTerlambat1Label">Detail Pengembalian #L001</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
       </div>
+      <div class="modal-body">
 
-      <!-- BODY -->
-      <div class="modal-body px-4 py-3">
-        <!-- PRODUK 1 -->
         <div class="border-bottom pb-3 mb-3">
           <h6 class="fw-bold mb-2">Produk 1: Baju Cosplay Naruto</h6>
           <div class="row mb-2">
-            <div class="col-md-4"><strong>Tanggal Order:</strong><br><span class="text-muted">7 Juni 2025</span></div>
+            <div class="col-md-4"><strong>Tanggal Order:</strong><br><span class="text-muted">2 Juni 2025</span></div>
             <div class="col-md-4"><strong>Durasi Sewa:</strong><br><span class="text-muted">3 Hari</span></div>
-            <div class="col-md-4"><strong>Batas Sewa:</strong><br><span class="text-muted">10 Juni 2025</span></div>
+            <div class="col-md-4"><strong>Batas Sewa:</strong><br><span class="text-muted">4 Juni 2025</span></div>
           </div>
           <div class="row mb-2">
             <div class="col-md-4"><strong>Ukuran Baju:</strong><br><span class="text-muted">L</span></div>
-            <div class="col-md-4"><strong>Status:</strong><br><span class="badge bg-purple-booked">Siap Di Ambil</span></div>
-            <div class="col-md-4"><strong>Total:</strong><br><span class="text-muted">Rp180.000</span></div>
+            <div class="col-md-4"><strong>Status:</strong><br><span class="badge bg-danger">Perlu di kemabilkan</span></div>
+            <div class="col-md-4"><strong>Total:</strong><br><span class="text-muted">Rp150.000</span></div>
           </div>
         </div>
 
-        <!-- PRODUK 2 -->
-        <div class="border-bottom pb-3 mb-3">
-          <h6 class="fw-bold mb-2">Produk 2: Baju Cosplay Kimetsu</h6>
-          <div class="row mb-2">
-            <div class="col-md-4"><strong>Tanggal Order:</strong><br><span class="text-muted">8 Juni 2025</span></div>
-            <div class="col-md-4"><strong>Durasi Sewa:</strong><br><span class="text-muted">6 Hari</span></div>
-            <div class="col-md-4"><strong>Batas Sewa:</strong><br><span class="text-muted">14 Juni 2025</span></div>
-          </div>
-          <div class="row mb-2">
-            <div class="col-md-4"><strong>Ukuran Baju:</strong><br><span class="text-muted">M</span></div>
-         <div class="col-md-4"><strong>Status:</strong><br><span class="badge bg-purple-booked">Siap Di Ambil</span></div>
-            <div class="col-md-4"><strong>Total:</strong><br><span class="text-muted">Rp270.000</span></div>
-          </div>
-        </div>
-
-        <!-- ALAMAT STORE -->
-        <div class="mt-3">
-          <h6 class="fw-bold mb-2">Alamat Toko:</h6>
-          <p class="text-muted mb-2">Jl. Citra Raya Boulevard No.01 BlokS No.25, Panongan, Kec. Panongan, Kabupaten Tangerang, Banten 15711</p>
-          <a href="https://maps.app.goo.gl/m1haojAtcU1XHFWZ6" target="_blank" class="btn btn-sm btn-outline-purple">
-            <i class="bi bi-geo-alt-fill me-1"></i>Cek di Google Maps
-          </a>
-        </div>
       </div>
-
-      <!-- FOOTER -->
-      <div class="modal-footer border-0">
-        <button type="button" class="btn btn-gradient-purple px-4" data-bs-dismiss="modal">Tutup</button>
-      </div>
+        <!-- Footer Modal -->
+        <div class="modal-footer justify-content-between">
+        <span class="text-muted">Harap segera hubungi admin untuk konfirmasi pengembalian.</span>
+        <a href="https://wa.me/6282112125639?text=Hai%20admin%20saya%20sudah%20di%20toko%20nih,%20ingin%20balikin%20baju%20saya.%20Kirim%20ya%20fotonya%20%F0%9F%99%8F"
+            class="btn btn-success" target="_blank">
+            <i class="bi bi-whatsapp me-1"></i>Konfirmasi via WhatsApp
+        </a>
+        </div>
     </div>
   </div>
-</div>
-
-
-
-<!-- MODAL DETAIL PESANAN 2 -->
-<div class="modal fade" id="modalPesanan2" tabindex="-1" aria-labelledby="modalPesananLabe2" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content rounded-4 shadow border-0">
-
-      <!-- HEADER -->
-      <div class="modal-header bg-gradient-ungu text-white rounded-top-4">
-        <h5 class="modal-title fw-bold" id="modalPesananLabel">Detail Pesanan</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-
-      <!-- BODY -->
-      <div class="modal-body px-4 py-3">
-        <!-- PRODUK 1 -->
-        <div class="border-bottom pb-3 mb-3">
-          <h6 class="fw-bold mb-2">Produk 1: Baju Cosplay Sakura</h6>
-          <div class="row mb-2">
-            <div class="col-md-4"><strong>Tanggal Order:</strong><br><span class="text-muted">14 Juni 2025</span></div>
-            <div class="col-md-4"><strong>Durasi Sewa:</strong><br><span class="text-muted">3 Hari</span></div>
-            <div class="col-md-4"><strong>Batas Sewa:</strong><br><span class="text-muted">16 Juni 2025</span></div>
-          </div>
-          <div class="row mb-2">
-            <div class="col-md-4"><strong>Ukuran Baju:</strong><br><span class="text-muted">M</span></div>
-            <div class="col-md-4"><strong>Status:</strong><br><span class="badge bg-warning text-dark">Diproses</span></div>
-            <div class="col-md-4"><strong>Total:</strong><br><span class="text-muted">Rp100.000</span></div>
-          </div>
-
-                  <div class="mt-3">
-          <h6 class="fw-bold mb-2">Alamat Toko:</h6>
-          <p class="text-muted mb-2">Jl. Citra Raya Boulevard No.01 BlokS No.25, Panongan, Kec. Panongan, Kabupaten Tangerang, Banten 15711</p>
-          <a href="https://maps.app.goo.gl/m1haojAtcU1XHFWZ6" target="_blank" class="btn btn-sm btn-outline-purple">
-            <i class="bi bi-geo-alt-fill me-1"></i>Cek di Google Maps
-          </a>
-        </div>
-        </div>
-
-      <!-- FOOTER -->
-      <div class="modal-footer border-0">
-        <button type="button" class="btn btn-gradient-purple px-4" data-bs-dismiss="modal">Tutup</button>
-      </div>
-    </div>
-  </div>
-</div>
 </div>
 
 
