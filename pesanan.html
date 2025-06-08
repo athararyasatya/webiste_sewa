@@ -15,7 +15,8 @@
   <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-  <div class="d-flex flex-column min-vh-100">
+<!-- Biar footer ga naik -->
+<div class="d-flex flex-column min-vh-100">
 
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg shadow-sm sticky-top" style="background-color: #f4f0ff;">
@@ -34,9 +35,10 @@
     <!-- MENU NAV -->
     <div class="collapse navbar-collapse order-lg-0" id="navbarNav">
       <ul class="navbar-nav ms-auto text-center text-lg-start w-100 justify-content-end gap-1 align-items-center">
-        <li class="nav-item">
+      <li class="nav-item">
           <a class="nav-link px-2 py-1 fw-normal small" href="index.html" style="color: #6b21a8;">Home</a>
         </li>
+
         <li class="nav-item">
           <a class="nav-link px-2 py-1 fw-normal small" href="index.html#product" style="color: #6b21a8;">Product</a>
         </li>
@@ -56,29 +58,37 @@
         <li class="nav-item">
           <a class="nav-link px-2 py-1 fw-normal small" href="pengembalian.html" style="color: #6b21a8;">Pengembalian</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link px-2 py-1 fw-normal small" href="histori.html" style="color: #6b21a8;">Histori order</a>
+        </li>
 
-        <!-- User Profile -->
+      <!-- User Profile -->
+      <a href="profile.html" class="nav-link p-0">
         <li class="nav-item d-flex align-items-center gap-1 px-2">
           <i class="bi bi-person-fill fs-5" style="color: #6b21a8;"></i>
           <span class="fw-normal small" style="color: #6b21a8;">Arhan Mani</span>
         </li>
+      </a>
 
-        <!-- Cart -->
-        <li class="nav-item">
+      
+      <!-- Cart -->
+      <li class="nav-item w-30 text-center">
+        <div class="d-flex justify-content-center">
           <a href="#" class="btn btn-light border d-flex align-items-center justify-content-center px-2 py-1 position-relative" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart">
             <i class="bi bi-cart fs-6 me-1" style="color: #6b21a8;"></i>
             <span class="fw-semibold small" style="color: #6b21a8;">My Cart</span>
             <span id="cartBadge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="display: none; font-size: 0.65rem;">0</span>
           </a>
-        </li>
+        </div>
+      </li>
 
         <!-- Login -->
-        <!-- <li class="nav-item">
+        <li class="nav-item">
           <a href="login.html" class="but-log btn btn-sm d-flex align-items-center gap-1 px-2 py-1">
-            <i class="bi bi-person-fill text-white fs-5"></i>
+            <i class="bi bi-person-fill text-white fs-6"></i>
             <span class="fw-semibold small text-white">Login</span>
           </a>
-        </li> -->
+        </li>
       </ul>
     </div>
   </div>

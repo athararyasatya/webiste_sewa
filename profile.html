@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pengembalian | CCC RENTAL</title>
+  <title>Profile | CCC RENTAL</title>
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -34,8 +34,12 @@
     <!-- MENU NAV -->
     <div class="collapse navbar-collapse order-lg-0" id="navbarNav">
       <ul class="navbar-nav ms-auto text-center text-lg-start w-100 justify-content-end gap-1 align-items-center">
-        <li class="nav-item">
+      <li class="nav-item">
           <a class="nav-link px-2 py-1 fw-normal small" href="index.html" style="color: #6b21a8;">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link px-2 py-1 fw-normal small" href="index.html#product" style="color: #6b21a8;">Product</a>
         </li>
         <!-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle px-2 py-1 fw-normal small" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #6b21a8;">
@@ -51,28 +55,36 @@
           <a class="nav-link px-2 py-1 fw-normal small" href="pesanan.html" style="color: #6b21a8;">Pesanan</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link px-2 py-1 fw-normal small" href="#" style="color: #6b21a8;">Pengembalian</a>
+          <a class="nav-link px-2 py-1 fw-normal small" href="pengembalian.html" style="color: #6b21a8;">Pengembalian</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link px-2 py-1 fw-normal small" href="histori.html" style="color: #6b21a8;">Histori order</a>
         </li>
 
-        <!-- User Profile -->
+      <!-- User Profile -->
+      <a href="profile.html" class="nav-link p-0">
         <li class="nav-item d-flex align-items-center gap-1 px-2">
           <i class="bi bi-person-fill fs-5" style="color: #6b21a8;"></i>
           <span class="fw-normal small" style="color: #6b21a8;">Arhan Mani</span>
         </li>
+      </a>
 
-        <!-- Cart -->
-        <li class="nav-item">
+      
+      <!-- Cart -->
+      <li class="nav-item w-30 text-center">
+        <div class="d-flex justify-content-center">
           <a href="#" class="btn btn-light border d-flex align-items-center justify-content-center px-2 py-1 position-relative" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart">
             <i class="bi bi-cart fs-6 me-1" style="color: #6b21a8;"></i>
             <span class="fw-semibold small" style="color: #6b21a8;">My Cart</span>
             <span id="cartBadge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="display: none; font-size: 0.65rem;">0</span>
           </a>
-        </li>
+        </div>
+      </li>
 
         <!-- Login -->
         <li class="nav-item">
           <a href="login.html" class="but-log btn btn-sm d-flex align-items-center gap-1 px-2 py-1">
-            <i class="bi bi-person-fill text-white fs-5"></i>
+            <i class="bi bi-person-fill text-white fs-6"></i>
             <span class="fw-semibold small text-white">Login</span>
           </a>
         </li>
@@ -82,146 +94,57 @@
 </nav>
 <!-- Hero Section Pesanan -->
  
-<!-- SECTION PENGEMBALIAN -->
+<!-- SECTION PROFIL -->
 <section class="hero-bg-wrapper py-5">
   <div class="container-fluid px-4">
-    <div class="hero-card d-flex flex-column flex-md-row align-items-center justify-content-between gap-4 rounded-4 shadow p-4">
+    <div class="hero-card d-flex flex-column flex-md-row align-items-center justify-content-between gap-4 rounded-4 shadow p-4 bg-white">
 
-      <!-- GAMBAR KIRI -->
-      <div class="hero-image-wrapper d-flex justify-content-center align-items-end flex-shrink-0" style="max-width: 350px;">
-        <img src="assets/anime.png" alt="cosplayer" class="hero-image w-100" loading="lazy">
+      <!-- FOTO PROFIL -->
+
+      <div class="text-center">
+        <div class="rounded-circle shadow overflow-hidden mx-auto" style="width: 120px; height: 120px;">
+          <img src="assets/anime2.png" alt="Foto Profil" class="w-100 h-100" style="object-fit: cover;">
+        </div>
+        <h5 class="mt-3 mb-0 fw-semibold" style="color: #6b21a8;">Arhan Mani</h5>
+        <small class="text-muted">User ID: #00123</small>
+      </div>
+      <!-- DETAIL PROFIL -->
+      <div class="scrolling-wrapper d-flex flex-column gap-3 w-100" style="max-width: 600px;">
+        <div class="d-flex justify-content-between">
+          <span class="fw-semibold text-muted">Nama Lengkap</span>
+          <span class="text-dark">Arhan Mani</span>
+        </div>
+        <div class="d-flex justify-content-between">
+          <span class="fw-semibold text-muted">Tanggal Lahir</span>
+          <span class="text-dark">12 Mei 2000</span>
+        </div>
+        <div class="d-flex justify-content-between">
+          <span class="fw-semibold text-muted">Jenis Kelamin</span>
+          <span class="text-dark">Laki-laki</span>
+        </div>
+        <div class="d-flex justify-content-between">
+          <span class="fw-semibold text-muted">Email</span>
+          <span class="text-dark">arhan.mani@email.com</span>
+        </div>
+        <div class="d-flex justify-content-between">
+          <span class="fw-semibold text-muted">Password</span>
+          <span class="text-dark">••••••••</span>
+        </div>
+
+        <!-- TOMBOL LOGOUT -->
+        <div class="text-end pt-3">
+          <button class="btn btn-outline-danger px-4">
+            <i class="bi bi-box-arrow-right me-2"></i>Logout
+          </button>
+        </div>
       </div>
 
-      <!-- KONTEN KANAN -->
-      <div class="hero-text flex-grow-1 w-100" style="overflow-x: auto;">
-        <h1 class="fw-bold display-5 gradient-futuristic">Pengembalian </h1>
-        <p class="mb-4">Berikut adalah daftar penyewaan yang perlu di kembalikan sesuai deadline </p>
-
-        <!-- ALAMAT TOKO -->
-<!-- Alamat Toko -->
-<div class="mb-4">
-  <h6 class="fw-semibold mb-1"><i class="bi bi-geo-alt-fill me-1"></i>Alamat Toko:</h6>
-  <p class="mb-2">Jl. Citra Raya Boulevard No.01 BlokS No.25, Panongan, Kec. Panongan, Kabupaten Tangerang, Banten 15711</p>
-  <a href="https://maps.app.goo.gl/m1haojAtcU1XHFWZ6"
-     target="_blank"
-     class="btn btn-sm but-alamat">
-    <i class="bi bi-map-fill me-1"></i>Cek di Google Maps
-  </a>
-</div>
-
-        <!-- WRAPPER CARD -->
-        <div class="scrolling-wrapper d-flex flex-row gap-3" style="overflow-x: auto;">
-
-          <!-- CARD TERLAMBAT -->
-          <div class="card shadow-sm border-0 p-3 border-danger" style="min-width: 250px;">
-            <div class="card-body">
-              <h6 class="fw-semibold mb-2">ID: <span class="text-muted">#L001</span></h6>
-              <p class="mb-1"><i class="bi bi-calendar-event me-1"></i>Deadline: 5 Juni 2025</p>
-              <p class="mb-1"><i class="bi bi-cash-coin me-1"></i><strong>Rp150.000</strong></p>
-              <p class="mb-1"><i class="bi bi-clock-fill text-danger me-1"></i><span class="text-danger fw-semibold">Terlambat 1 Hari</span></p>
-              <span class="badge bg-danger">Perlu Dikembalikan</span><br>
-              <button class="btn btn-sm btn-gradient-purple mt-3" data-bs-toggle="modal" data-bs-target="#modalTerlambat1">Lihat Detail</button>
-            </div>
-          </div>
-
-                    <div class="card shadow-sm border-0 p-3 border-danger" style="min-width: 250px;">
-            <div class="card-body">
-              <h6 class="fw-semibold mb-2">ID: <span class="text-muted">#L001</span></h6>
-              <p class="mb-1"><i class="bi bi-calendar-event me-1"></i>Deadline: 5 Juni 2025</p>
-              <p class="mb-1"><i class="bi bi-cash-coin me-1"></i><strong>Rp150.000</strong></p>
-              <p class="mb-1"><i class="bi bi-clock-fill text-danger me-1"></i><span class="text-danger fw-semibold">Terlambat 1 Hari</span></p>
-              <span class="badge bg-danger">Perlu Dikembalikan</span><br>
-              <button class="btn btn-sm btn-gradient-purple mt-3" data-bs-toggle="modal" data-bs-target="#modalTerlambat1">Lihat Detail</button>
-            </div>
-          </div>
-
-                    <div class="card shadow-sm border-0 p-3 border-danger" style="min-width: 250px;">
-            <div class="card-body">
-              <h6 class="fw-semibold mb-2">ID: <span class="text-muted">#L001</span></h6>
-              <p class="mb-1"><i class="bi bi-calendar-event me-1"></i>Deadline: 5 Juni 2025</p>
-              <p class="mb-1"><i class="bi bi-cash-coin me-1"></i><strong>Rp150.000</strong></p>
-              <p class="mb-1"><i class="bi bi-clock-fill text-danger me-1"></i><span class="text-danger fw-semibold">Terlambat 1 Hari</span></p>
-              <span class="badge bg-danger">Perlu Dikembalikan</span><br>
-              <button class="btn btn-sm btn-gradient-purple mt-3" data-bs-toggle="modal" data-bs-target="#modalTerlambat1">Lihat Detail</button>
-            </div>
-          </div>
-
-                    <div class="card shadow-sm border-0 p-3 border-danger" style="min-width: 250px;">
-            <div class="card-body">
-              <h6 class="fw-semibold mb-2">ID: <span class="text-muted">#L001</span></h6>
-              <p class="mb-1"><i class="bi bi-calendar-event me-1"></i>Deadline: 5 Juni 2025</p>
-              <p class="mb-1"><i class="bi bi-cash-coin me-1"></i><strong>Rp150.000</strong></p>
-              <p class="mb-1"><i class="bi bi-clock-fill text-danger me-1"></i><span class="text-danger fw-semibold">Terlambat 1 Hari</span></p>
-              <span class="badge bg-danger">Perlu Dikembalikan</span><br>
-              <button class="btn btn-sm btn-gradient-purple mt-3" data-bs-toggle="modal" data-bs-target="#modalTerlambat1">Lihat Detail</button>
-            </div>
-          </div>
-
-                    <div class="card shadow-sm border-0 p-3 border-danger" style="min-width: 250px;">
-            <div class="card-body">
-              <h6 class="fw-semibold mb-2">ID: <span class="text-muted">#L001</span></h6>
-              <p class="mb-1"><i class="bi bi-calendar-event me-1"></i>Deadline: 5 Juni 2025</p>
-              <p class="mb-1"><i class="bi bi-cash-coin me-1"></i><strong>Rp150.000</strong></p>
-              <p class="mb-1"><i class="bi bi-clock-fill text-danger me-1"></i><span class="text-danger fw-semibold">Terlambat 1 Hari</span></p>
-              <span class="badge bg-danger">Perlu Dikembalikan</span><br>
-              <button class="btn btn-sm btn-gradient-purple mt-3" data-bs-toggle="modal" data-bs-target="#modalTerlambat1">Lihat Detail</button>
-            </div>
-          </div>
-
-                    <div class="card shadow-sm border-0 p-3 border-danger" style="min-width: 250px;">
-            <div class="card-body">
-              <h6 class="fw-semibold mb-2">ID: <span class="text-muted">#L001</span></h6>
-              <p class="mb-1"><i class="bi bi-calendar-event me-1"></i>Deadline: 5 Juni 2025</p>
-              <p class="mb-1"><i class="bi bi-cash-coin me-1"></i><strong>Rp150.000</strong></p>
-              <p class="mb-1"><i class="bi bi-clock-fill text-danger me-1"></i><span class="text-danger fw-semibold">Terlambat 1 Hari</span></p>
-              <span class="badge bg-danger">Perlu Dikembalikan</span><br>
-              <button class="btn btn-sm btn-gradient-purple mt-3" data-bs-toggle="modal" data-bs-target="#modalTerlambat1">Lihat Detail</button>
-            </div>
-          </div>
-
-        </div> <!-- end scrolling-wrapper -->
-      </div> <!-- end hero-text -->
-
-    </div>
+    </div> <!-- end hero-card -->
   </div>
 </section>
 
-<!-- MODAL DETAIL PENGEMBALIAN TERLAMBAT -->
-<div class="modal fade" id="modalTerlambat1" tabindex="-1" aria-labelledby="modalTerlambat1Label" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title fw-bold" id="modalTerlambat1Label">Detail Pengembalian #L001</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
-      </div>
-      <div class="modal-body">
 
-        <div class="border-bottom pb-3 mb-3">
-          <h6 class="fw-bold mb-2">Produk 1: Baju Cosplay Naruto</h6>
-          <div class="row mb-2">
-            <div class="col-md-4"><strong>Tanggal Order:</strong><br><span class="text-muted">2 Juni 2025</span></div>
-            <div class="col-md-4"><strong>Durasi Sewa:</strong><br><span class="text-muted">3 Hari</span></div>
-            <div class="col-md-4"><strong>Batas Sewa:</strong><br><span class="text-muted">4 Juni 2025</span></div>
-          </div>
-          <div class="row mb-2">
-            <div class="col-md-4"><strong>Ukuran Baju:</strong><br><span class="text-muted">L</span></div>
-            <div class="col-md-4"><strong>Status:</strong><br><span class="badge bg-danger">Perlu di kemabilkan</span></div>
-            <div class="col-md-4"><strong>Total:</strong><br><span class="text-muted">Rp150.000</span></div>
-          </div>
-        </div>
 
-      </div>
-        <!-- Footer Modal -->
-        <div class="modal-footer justify-content-between">
-        <span class="text-muted">Harap segera hubungi admin untuk konfirmasi pengembalian.</span>
-        <a href="https://wa.me/6282112125639?text=Hai%20admin%20saya%20sudah%20di%20toko%20nih,%20ingin%20balikin%20baju%20saya.%20Kirim%20ya%20fotonya%20%F0%9F%99%8F"
-            class="btn btn-success" target="_blank">
-            <i class="bi bi-whatsapp me-1"></i>Konfirmasi via WhatsApp
-        </a>
-        </div>
-    </div>
-  </div>
-</div>
 
 
     <!-- Footer -->
