@@ -5,41 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Login CCC RENTAL</title>
 
-  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
-  <!-- Google Font: Mona-Sans -->
- <link href="https://fonts.googleapis.com/css2?family=Mona+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Mona+Sans:wght@400;600&display=swap" rel="stylesheet">
 
-  <!-- Leaflet CSS -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-<!-- Leaflet Routing Machine CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
 
-  <!-- Custom CSS -->
   <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
 
 
-<!-- Navbar -->
 <nav class="navbar navbar-expand-lg shadow-sm sticky-top" style="background-color: #f4f0ff;">
   <div class="container px-3 d-flex justify-content-between align-items-center">
 
-    <!-- LOGO -->
     <a class="navbar-brand fw-bold d-flex align-items-center" href="#" style="color: #6b21a8;">
       <i class="bi bi-disc me-2 fs-2"></i> CCC RENTAL
     </a>
 
-    <!-- HAMBURGER (mobile) -->
     <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <i class="bi bi-list fs-2" style="color: #6b21a8;"></i>
     </button>
 
-    <!-- MENU NAV -->
     <div class="collapse navbar-collapse order-lg-0" id="navbarNav">
       <ul class="navbar-nav ms-auto text-center text-lg-start w-100 justify-content-end gap-1 align-items-center">
         <li class="nav-item">
@@ -49,16 +39,6 @@
         <li class="nav-item">
           <a class="nav-link px-2 py-1 fw-normal small" href="index.html#product" style="color: #6b21a8;">Product</a>
         </li>
-        <!-- <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle px-2 py-1 fw-normal small" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #6b21a8;">
-            Costumes
-          </a>
-          <ul class="dropdown-menu custom-dropdown-animation">
-            <li><a class="dropdown-item small" href="#">Anime</a></li>
-            <li><a class="dropdown-item small" href="#">Fantasy</a></li>
-            <li><a class="dropdown-item small" href="#">Super Hero</a></li>
-          </ul>
-        </li> -->
         <li class="nav-item">
           <a class="nav-link px-2 py-1 fw-normal small" href="pesanan.html" style="color: #6b21a8;">Pesanan</a>
         </li>
@@ -69,7 +49,6 @@
           <a class="nav-link px-2 py-1 fw-normal small" href="histori.html" style="color: #6b21a8;">Histori order</a>
         </li>
 
-      <!-- User Profile -->
       <a href="profile.html" class="nav-link p-0">
         <li class="nav-item d-flex align-items-center gap-1 px-2">
           <i class="bi bi-person-fill fs-5" style="color: #6b21a8;"></i>
@@ -78,7 +57,6 @@
       </a>
 
       
-      <!-- Cart -->
       <li class="nav-item w-30 text-center">
         <div class="d-flex justify-content-center">
           <a href="#" class="btn btn-light border d-flex align-items-center justify-content-center px-2 py-1 position-relative" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart">
@@ -89,7 +67,6 @@
         </div>
       </li>
 
-        <!-- Login -->
         <li class="nav-item">
           <a href="login.html" class="but-log btn btn-sm d-flex align-items-center gap-1 px-2 py-1">
             <i class="bi bi-person-fill text-white fs-6"></i>
@@ -101,8 +78,7 @@
   </div>
 </nav>
 
-<!-- Offcanvas Cart sidebar -->
-  <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" id="offcanvasCart">
+<div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" id="offcanvasCart">
     <div class="offcanvas-header text-white" style="background: linear-gradient(135deg, #6f42c1, #000000);">
       <h5 class="offcanvas-title d-flex align-items-center">
         <i class="bi bi-disc me-2"></i> CCC RENTAL
@@ -113,20 +89,16 @@
     <div class="offcanvas-body p-3 d-flex flex-column h-100" style="background: #f8f5ff; color: #1e1b4b;">
       <h5 class="mb-3 fw-semibold text-purple">Keranjang Saya</h5>
 
-    <!-- Alert Informasi -->
-  <div class="alert alert-warning py-2 px-3 mb-3 rounded-3" role="alert" style="font-size: 0.85rem;">
+    <div class="alert alert-warning py-2 px-3 mb-3 rounded-3" role="alert" style="font-size: 0.85rem;">
     ⏱️ Durasi sewa minimal adalah <strong>3 hari</strong> dan hanya bisa ditambah per <strong>3 hari</strong>.<br>
     Jika dikurangi di bawah 3 hari, produk akan otomatis dihapus dari keranjang.
   </div>
 
-  <!-- Dinamis isi produk -->
   <div id="cartItems"></div>
 
 
-      <!-- Spacer agar total tetap di bawah -->
       <div style="flex-grow: 1;"></div>
 
-      <!-- Total -->
       <div class="border-top pt-3 mt-3">
         <div class="d-flex justify-content-between mb-1">
           <span>Subtotal</span>
@@ -142,12 +114,10 @@
   </div>
 
 
-<!-- Overlay untuk efek gelap cart -->
 <div id="overlay-dark" class="overlay-dark"></div>
 
 
-<!-- Hero Section Register -->
-<div class="register-hero d-flex align-items-center justify-content-center min-vh-100 px-3">
+<div class="register-hero d-flex align-items-center justify-content-center py-5 px-3">
   <div class="register-card p-4 rounded-4 shadow-lg">
     <div class="text-center mb-4">
       <i class="bi bi-person-plus-fill fs-1 text-purple"></i>
@@ -168,9 +138,25 @@
         <label for="password" class="form-label small fw-semibold">Password</label>
         <input type="password" class="form-control custom-focus" id="password" placeholder="••••••••" required>
       </div>
+      
       <div class="mb-3">
         <label for="confirmPassword" class="form-label small fw-semibold">Konfirmasi Password</label>
         <input type="password" class="form-control custom-focus" id="confirmPassword" placeholder="••••••••" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="registrationDate" class="form-label small fw-semibold">Tanggal Registrasi</label>
+        <input type="date" class="form-control custom-focus" id="registrationDate" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="gender" class="form-label small fw-semibold">Jenis Kelamin</label>
+        <select class="form-select custom-focus" id="gender" required>
+          <option selected disabled value="">Pilih...</option>
+          <option value="Laki-laki">Laki-laki</option>
+          <option value="Perempuan">Perempuan</option>
+          <option value="Lainnya">Lainnya</option>
+        </select>
       </div>
 
       <button type="submit" class="btn w-100 fw-semibold text-white" style="background-color: #6b21a8;">Daftar</button>
@@ -182,12 +168,10 @@
 
 
 
-<!-- Footer -->
 <footer class="text-light pt-5 pb-4" style="background: linear-gradient(135deg, #6f42c1, #000000); border-top-left-radius: 12px; border-top-right-radius: 12px;">
   <div class="container">
     <div class="row gy-4">
 
-      <!-- Brand -->
       <div class="col-md-4">
         <h4 class="d-flex align-items-center mb-3 fw-bold">
           <i class="bi bi-disc-fill fs-3 me-2 text-white"></i> CCC RENTAL
@@ -203,7 +187,6 @@
         </div>
       </div>
 
-      <!-- Links -->
       <div class="col-md-2">
         <h6 class="fw-semibold mb-3">Company</h6>
         <ul class="list-unstyled small text-white-50">
@@ -245,14 +228,11 @@
 </footer>
 
 
-<!-- Bootstrap & JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/script.js"></script>
 <script src="js/product.js"></script>
 
-<!-- Leaflet JS -->
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-<!-- Routing Machine JS -->
 <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.min.js"></script>
 </body>
 </html>
